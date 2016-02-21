@@ -52,7 +52,7 @@ input[type=submit] {
 	height: 50px;
 	font-size: 15px;
     cursor: pointer;
-	margin-top: 5px;
+	/*margin-top: 10px;*/
 }
 input[type=text] {
     border: none;
