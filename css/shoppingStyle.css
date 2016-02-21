@@ -1,0 +1,87 @@
+/*Style sheet for shopping page */
+.top {
+    position:absolute;
+    top:0;left:0; right:0;
+    height: 92px;
+    background-color: #005696;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #005696;
+}
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+	color: orange;
+}
+.right {
+    position:absolute;
+    right:0; top:0px; bottom: 0;
+    width: 200px;
+    background-color: orange;
+}
+.main {
+    position: absolute;
+    right:178px; top:92px; left:0; bottom:0;
+     background-color: #005696;
+
+}
+.tile {
+   float: left;
+   position: relative;
+   width: 20%;
+   padding-bottom: 20%;
+}
+.content {
+   position: absolute;
+   left: 0.5em;
+   right: 0.5em;
+   top: 0.5em;
+   bottom: 0.5em;
+   background-color: #005696;
+}
+div.img {
+  position: absolute;
+    top: 20px;
+    bottom: 20px
+    right: 20;
+    left: 20;
+}
+div button {
+	background-color: orange; 
+    border: none;
+    color: white;
+    padding: 10px 10px 10px 10px;
+    font-size: 15px;
+    margin-bottom:10px;
+}
+div button:hover{
+	 color:#000;
+}
+@media (max-width: 30em){
+  .tile{
+     width: 50%;
+     padding-bottom: 50%;
+  }
+}
+input[type=submit] {
+    background-color: #005696;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}

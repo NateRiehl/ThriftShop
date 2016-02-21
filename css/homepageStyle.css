@@ -1,0 +1,67 @@
+body{
+	background-color: #005696;
+}
+
+img{
+	width:800px;height:300px;
+}
+
+h1{
+	padding-top: 150px;
+	text-align: center; 
+	width: 800px;
+	color: white;
+}
+
+h2{
+	width: 800px; 
+	text-align: center;
+	color: orange;
+}
+
+p{
+	text-align: center;
+}
+
+a{
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	text-decoration: none;
+	color: orange;
+	border: none;
+	
+}
+
+.button{
+	background-color: orange;
+	border: none;
+	width: 200px;
+	height: 50px;
+	font-size: 15px;
+}
+.button:hover{
+	border-style: solid;
+    border-color: #005696;
+    cursor: pointer;
+}
+input[type=submit] {
+    background-color: orange;
+    border: none;
+    width: 405px;
+	height: 50px;
+	font-size: 15px;
+    cursor: pointer;
+}
+input[type=text] {
+    border: none;
+    font-size: 15px;
+    height: 25px;
+    width: 200px;
+}
+input[type=password] {
+    border: none;
+    font-size: 15px;
+    height: 25px;
+    width: 200px;
+}
