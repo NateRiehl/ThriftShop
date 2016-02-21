@@ -1,0 +1,112 @@
+<html>
+<head><title>HTML/PHP Form Processing Example</title></head>
+
+<body bgColor="#FFFFFF">
+<h2 align="center">HTML Form Example</h2>
+
+<!-- when submitted, form1.php is executed to 
+	 handle the form inputs and return the results to user -->
+
+<form name="fmExample" method="POST" action="./fmExample.php">
+
+<table align="center" border="1" cellspacing="0" cellpadding="4" 
+	   style="border: solid 1px !important;">
+
+<caption><h3>HTML Form Example Table</h3></caption>
+
+<!-- row 1: header row -->
+<tr>
+<th>field name</th>
+<th>field for user</th>
+</tr>
+
+<!-- row 2: text field -->
+<tr>
+<td>textfield</td>
+<td><input type="text" name="tf" placeholder="enter text"></td>
+</tr>
+
+<!-- row 3: text area-->
+<tr>
+<td>textarea</td>
+<td><textarea name="tarea" value="" rows="5" cols="60"></textarea></td>
+</tr>
+
+<!-- row 4: password field-->
+<tr>
+<td>password</td>
+<td><input type="password" name="pass" placeholder="type your password"></td>
+</tr>
+
+<!-- row 5: radio buttons -->
+<tr>
+<td>radio buttons</td>
+<td>
+<input type="radio" name="rb" value="rbC1">Choice 1<br />
+<input type="radio" name="rb" value="rbC2">Choice 2<br />
+<input type="radio" name="rb" value="rbC3">Choice 3<br />
+<input type="radio" name="rb" value="rbC4">Choice 4
+</td>
+</tr>
+
+<!-- row 6: check boxes -->
+<tr>
+<td>check boxes</td>
+<td>
+<input type="checkbox" name="cb[]" value="cbC1">Choice 1<br />
+<input type="checkbox" name="cb[]" value="cbC2">Choice 2<br />
+<input type="checkbox" name="cb[]" value="cbC3">Choice 3<br />
+<input type="checkbox" name="cb[]" value="cbC4">Choice 4
+</td>
+</tr>
+
+<!-- row 7: drop down list -->
+<tr>
+<td>drop down list</td>
+<td>
+<select name="ddl">
+<option value="ddlC1">Choice 1</option>
+<option value="ddlC2">Choice 2</option>
+<option value="ddlC3">Choice 3</option>
+<option value="ddlC4">Choice 4</option>
+</select>
+</td>
+</tr>
+
+<!-- row 8: drop down list, multiple choice -->
+<tr>
+<td>drop down list, multiple</td>
+<td>
+<select name="ddlm[]" multiple>
+<option value="ddlmC1">Choice 1</option>
+<option value="ddlmC2">Choice 2</option>
+<option value="ddlmC3">Choice 3</option>
+<option value="ddlmC4">Choice 4</option>
+</select>
+</td>
+</tr>
+
+<!-- row 9: button -->
+<tr>
+<td>button</td>
+<td><input type="button" value="bn"></td>
+</tr>
+
+<!-- row 10: submit button -->
+<tr>
+<td>submit</td>
+<td><input type="submit" value="submit form" /></td>
+</tr>
+
+<!-- row 11: reset button -->
+<tr>
+<td>reset</td>
+<td><input type="reset" value="clear all" /></td>
+</tr>
+
+</table>
+</form>
+
+</body>
+</html>
+

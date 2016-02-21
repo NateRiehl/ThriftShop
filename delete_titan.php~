@@ -1,0 +1,23 @@
+<?php
+
+include_once('db_connect.php');
+
+//DEBUG: what user entered
+	print_r($_POST);
+
+//for each row in $_POST['cbTitan']
+//create a MYSQL query to delete the row with that id
+//then execute that query
+
+	foreach($_POST['cbTitan'] as $id){
+		//printf("Delete titan with id %d\n", $id);
+		$query = "DELETE FROM titan2 WHERE id=" . $id;
+		//printf("Query to execute = %s\n", $query);	
+		$result = $db->query($query);	
+		if ($result != FALSE)
+			printf("<p> Successfully deleted titan with %s</p>", $id);
+	}
+
+?>
+
+<a href='test.php'> Back to titan Page</a>

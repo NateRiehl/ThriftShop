@@ -9,7 +9,7 @@
 		<br>
 		
 		
-		<h2> Join a Thriving Community of Students and Professors Searching for High Quality, Low Price Items</h2>
+		<h2> Join a Thriving Community of Students and Professors Searching for High Quality, Low Price Items!</h2>
 <div align=center class = "login">
 	<form form name='fmLogin' method='POST' action='login.php'>
   	<input type="text" name="email" placeholder = "Enter Email">

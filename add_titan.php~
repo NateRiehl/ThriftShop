@@ -1,0 +1,30 @@
+<?php
+	include_once('db_connect.php');
+	print_r($_POST);
+
+	$id = $_POST['id'];
+	$name = $_POST['name'];
+	$planet = $_POST['planet'];
+	$power = $_POST['power'];
+
+$query = "INSERT INTO titan2 VALUES(" . $id .
+	", '" . $planet . 
+	", '" . $power . 
+	", '" . $name .
+	"');";
+
+$query = "INSERT INTO titan2 VALUES($id, '$planet', '$power', '$name')";
+
+printf("Query = %s\n", $query);
+
+//execute query
+$result = $db->query($query);
+	if($result != FALSE)
+		printf("<p>Added new titan to database</p>\n");
+	else
+		printf("<p>Failed</p>");
+?>
+
+<p> <!--paragraph--> 
+<a href="test.php">Back to titan page </a>
+</p>

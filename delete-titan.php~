@@ -1,0 +1,14 @@
+<?php
+
+//DEBUG: what user entered
+	print_r($_POST);
+
+//for each row in $_POST['cbTitan']
+//create a MYSQL query to delete the row with that id
+//then execute that query
+
+	$
+
+?>
+
+<a href='test.php'> Back to titan Page</a>
