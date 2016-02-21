@@ -8,9 +8,22 @@ include_once('dbproj_connect.php');
  <script type="text/javascript">
  //This function checks if the two passwords match each other and the form is submitted if they do
     function checkForm() { 
+		var fName = document.getElementById('Fname').value;
+		var lName = document.getElementById('Lname').value;
+		var email = document.getElementById('email').value;
         var pw = document.getElementById('password').value;
         var pwCheck = document.getElementById('passwordCheck').value;
-        if(pw == "" || pwCheck == ""){
+		if(fName == ""){
+			alert("First name required.");		
+		}
+		else if(lName == ""){
+			alert("Last name required.");			
+		}        
+		else if(email == ""){ 
+			//should this be in php? in order to check for invalid email.
+			alert("Email address required.");
+		}
+		else if(pw == "" || pwCheck == ""){
         	alert("Password field left blank");
         }
         else if(pw != pwCheck){
@@ -31,13 +44,13 @@ include_once('dbproj_connect.php');
 <form name='fmAdd' method='POST' action='add_user.php' onsubmit="return checkForm()">
 <table cellpadding="0" cellspacing="5">
 <tr>
- <td><input type='text' name='Fname' placeholder='First name'/> </td>
+ <td><input type='text' name='Fname' id='Fname' placeholder='First name'/> </td>
 </tr>
 <tr>
-<td><input type='text' name='Lname' placeholder='Last name'/> </td>
+<td><input type='text' name='Lname' id='Lname' placeholder='Last name'/> </td>
 </tr>
 <tr>
-<td><input type='text' name='email' placeholder='Email'/> </td>
+<td><input type='text' name='email' id='email' placeholder='Email'/> </td>
 </tr>
 <tr>
 <td> <input type='password' name ='password' id='password'  placeholder='Password'/> </td>
