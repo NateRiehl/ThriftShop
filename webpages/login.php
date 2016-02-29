@@ -4,6 +4,8 @@ $email=$_POST['email'];
 $password =$_POST['password'];
 
 $query = "Select* from USER WHERE email='$email' AND password='$password'";
+=======
+$query = "Select * from users WHERE email='$email' AND password='$password'";
 $result = $db ->query($query);
 if($result != false){
 	if($result->rowCount() == 1){

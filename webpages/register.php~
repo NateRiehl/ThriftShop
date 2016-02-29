@@ -11,6 +11,9 @@ include_once('dbproj_connect.php');
 		var fName = document.getElementById('Fname').value;
 		var lName = document.getElementById('Lname').value;
 		var email = document.getElementById('email').value;
+
+		<?php  ?>
+
         var pw = document.getElementById('password').value;
         var pwCheck = document.getElementById('passwordCheck').value;
 		if(fName == ""){
