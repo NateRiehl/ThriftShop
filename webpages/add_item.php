@@ -1,5 +1,13 @@
 <?php
 include_once('dbproj_connect.php');
+
+// take a look at what we get from user's upload
+// $_FILES['image']['name']:     file name from the user's computer
+// $_FILES['image']['size']:     # of bytes
+// $_FILES['image']['tmp_name']: actual file stored in temporary location
+// $_FILES['image']['type']:     type of the file
+// $_FILES['image']['error']:    error type (UPLOAD_ERR_NO_FILE, UPLOAD_ERR_INI_SIZE, UPLOAD_ERR_FORM_SIZE, ...)
+$imageLink;
 $name= $_POST['name'];
 $price=$_POST['price'];
 $email=$_POST['email'];
@@ -12,14 +20,10 @@ $result = $db ->query($query);
 if($result != false){
 	printf("<p>Added item to shop</p>\n");
 }
-
-// take a look at what we get from user's upload
-// $_FILES['image']['name']:     file name from the user's computer
-// $_FILES['image']['size']:     # of bytes
-// $_FILES['image']['tmp_name']: actual file stored in temporary location
-// $_FILES['image']['type']:     type of the file
-// $_FILES['image']['error']:    error type (UPLOAD_ERR_NO_FILE, UPLOAD_ERR_INI_SIZE, UPLOAD_ERR_FORM_SIZE, ...)
-
+$queryID = "SELECT id FROM ITEM WHERE name='$name' AND description='$description' AND date='$date' AND price='$price'";
+$resultID = $db ->query($queryID);
+$row = $resultID->fetch();
+$id = $row['id'];
 $message1 = saveFile($_FILES['imageFile']);
 
 // Takes one file data array, checks the validity, then save the file into local folder
@@ -62,8 +66,8 @@ function saveFile($fileData) {
 
                 $upFolder = "imgs/";
                 $fnOriginal = $fileData['name'];
-                $fnNew    = $upFolder . $fnOriginal;
-
+                $fnNew    = $upFolder. $GLOBALS['id'].$fnOriginal;
+		$GLOBALS['imageLink'] = $upFolder. $GLOBALS['id'].$fnOriginal;
                 //echo "saving as " . $fnNew;
 
                 // copy the uploaded file from temp folder to specified location
@@ -84,7 +88,9 @@ function saveFile($fileData) {
 
     return $msg;
 }
-
+printf($imageLink);
+$query = "UPDATE ITEM SET imageLink='$imageLink' WHERE id='$id'";
+$result = $db ->query($query);
 ?>
 
 
