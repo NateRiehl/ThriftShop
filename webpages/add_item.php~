@@ -20,6 +20,12 @@ if($result != false){
 // $_FILES['image']['type']:     type of the file
 // $_FILES['image']['error']:    error type (UPLOAD_ERR_NO_FILE, UPLOAD_ERR_INI_SIZE, UPLOAD_ERR_FORM_SIZE, ...)
 
+echo "<PRE>\n";
+echo("".$imageFile);
+print_r($_FILES);
+
+echo "</PRE>\n";
+
 $message1 = saveFile($_FILES['imageFile']);
 
 // Takes one file data array, checks the validity, then save the file into local folder

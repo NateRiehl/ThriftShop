@@ -30,6 +30,8 @@ printf("<p>op = %s</p>\n", $op);
 		style="border:1px ridge red;
 		 background:yellow;
 		color=blue;
+		width: 200px;
+		margin-left: 10px;
 		font: Arial, bold, 40px;">
     <H2> <A HREF="<?php echo $base; ?>?op=home"> HELLO SUB1 </A></H2>
 	HELLO WORLD

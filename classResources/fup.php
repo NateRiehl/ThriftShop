@@ -1,26 +1,24 @@
 <?php
-include_once('dbproj_connect.php');
-$name= $_POST['name'];
-$price=$_POST['price'];
-$email=$_POST['email'];
-$description =$_POST['description'];
-$date = date('Y-m-d');
-$imageFile = $_FILES['imageFile'];
-$query = "INSERT INTO ITEM (name, price, description, date, sellerEmail) 
-				VALUES('$name', $price, '$description', '$date','$email')";
-$result = $db ->query($query);
-if($result != false){
-	printf("<p>Added item to shop</p>\n");
-}
 
 // take a look at what we get from user's upload
-// $_FILES['image']['name']:     file name from the user's computer
-// $_FILES['image']['size']:     # of bytes
-// $_FILES['image']['tmp_name']: actual file stored in temporary location
-// $_FILES['image']['type']:     type of the file
-// $_FILES['image']['error']:    error type (UPLOAD_ERR_NO_FILE, UPLOAD_ERR_INI_SIZE, UPLOAD_ERR_FORM_SIZE, ...)
+// $_FILES['myFile1']['name']:     file name from the user's computer
+// $_FILES['myFile1']['size']:     # of bytes
+// $_FILES['myFile1']['tmp_name']: actual file stored in temporary location
+// $_FILES['myFile1']['type']:     type of the file
+// $_FILES['myFile1']['error']:    error type (UPLOAD_ERR_NO_FILE, UPLOAD_ERR_INI_SIZE, UPLOAD_ERR_FORM_SIZE, ...)
 
-$message1 = saveFile($_FILES['imageFile']);
+echo "<PRE>\n";
+
+print_r($_FILES);
+
+echo "</PRE>\n";
+
+$message1 = saveFile($_FILES['myFile1']);
+
+$message2 = saveFile($_FILES['myFile2']);
+
+$message3 = saveFile($_FILES['myFile3']);
+
 
 // Takes one file data array, checks the validity, then save the file into local folder
 // e.g., $fileData is $_FILES['myFile1'] or $_FILES['myFile2'] or $_FILES['myFile3']
@@ -60,7 +58,7 @@ function saveFile($fileData) {
             if ($mimeType == "image/jpeg" || $mimeType == "image/jpg" || 
                 $mimeType == "image/gif" || $mimeType == "image/png") {
 
-                $upFolder = "imgs/";
+                $upFolder = "./uploaded/";
                 $fnOriginal = $fileData['name'];
                 $fnNew    = $upFolder . $fnOriginal;
 
@@ -87,6 +85,14 @@ function saveFile($fileData) {
 
 ?>
 
+<HTML>
+<HEAD><TITLE>File Upload Result</TITLE></HEAD>
 
+<BODY>
 
-<a href="shoppingPage.php"> Go to shopping page </a>
+<P><?php echo $message1; ?></P>
+<P><?php echo $message2; ?></P>
+<P><?php echo $message3; ?></P>
+
+</BODY>
+</HTML>
