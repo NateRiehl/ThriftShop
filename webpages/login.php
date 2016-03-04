@@ -1,8 +1,9 @@
 <?php
 include_once('dbproj_connect.php');
+session_start();
 $email=$_POST['email'];
 $password =$_POST['password'];
-
+$_SESSION["email"] = $email;
 $query = "Select* from USER WHERE email='$email' AND password='$password'";
 $result = $db ->query($query);
 if($result != false){

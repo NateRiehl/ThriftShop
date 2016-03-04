@@ -1,0 +1,75 @@
+body{
+background-color: #005696;
+}
+.bio {
+    position:absolute;
+    right:5%; top:50px; bottom: 0;
+    width: 25%;
+    height: 500px;
+    background-color: orange;
+}
+.bio button{
+    background-color: #003696;
+    border: none;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    font-size: 80%;
+    position: absolute;
+    top:90%;
+    left: 25%;
+    width: 50%;
+}
+.bio button:hover{
+	 color:#000;
+}
+.profilepic{
+    position:absolute;
+    right:40%; top:50px; bottom: 0;
+    width: 25%;
+    height: 500px;
+    background-color: orange;
+
+}
+.profilepic button{
+    background-color: #003696;
+    border: none;
+    color: white;
+    width: 50%;
+    font-size: 80%; 
+    padding: 10px 0px 10px 0px;
+    position: absolute;
+    top:90%;
+    left: 25%;
+}
+.profilepic button:hover{
+	 color:#000;
+}
+
+.profilePic img{
+	position: absolute;
+	left: 10%;
+	top: 10%;
+	width: 80%;
+	height: 60%;
+}
+#addItem {
+    position:absolute;
+    top: 50px; left: 50px;
+    width: 25%;
+    background-color: orange; 
+    border: none;
+    color: white;
+    padding: 10px 50px 10px 50px;
+    font-size: 80%;
+}
+#addItem:hover{
+	 color:#000;
+}
+
+.reviews{
+    position:absolute;
+    right:75%; top:100px; bottom: 0; left:50px;
+    width: 25%;
+    height: 450px;
+    background-color: orange;
+}

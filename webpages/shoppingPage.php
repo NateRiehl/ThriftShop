@@ -8,7 +8,7 @@
 </head>
 <div class = "top">
 <ul>
-  <li><a href="#">My page</a></li>
+  <li><a href="profile.php">My page</a></li>
   <li><a href="homepage.php">Homepage</a></li>
 </ul>
 </div>
