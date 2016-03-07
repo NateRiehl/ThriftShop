@@ -1,17 +1,17 @@
 body{
-
+ background-color:#005696;
 }
 .bio {
     position:absolute;
-    left: 28%; top: 40%;
+    left: 28%; top: 30%;
     width: 60%;
     height: 50%;
    /* background-color: orange;*/
 }
 .bio button{
-    background-color: #4caf50;
+    background-color: orange;
     border: none;
-    color: white;
+    color: #005696;
     padding: 10px 30px 10px 30px;
     font-size: 80%;
     position: absolute;
@@ -23,6 +23,9 @@ body{
 	 color:#000;
 }
 
+.bio h1{
+	color: orange;
+}
 
 .profilepic{
     position:absolute;
@@ -33,20 +36,53 @@ body{
     /*background-color: orange;*/
 
 }
-.profilepic button{
-    background-color: #003696;
-    border: none;
-    color: white;
-    width: 50%;
-    font-size: 80%; 
-    padding: 10px 0px 10px 0px;
-    position: absolute;
-    top:88%;
-    left: 25%;
+
+#propic{
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
 }
-.profilepic button:hover{
-	 color:#000;
+
+#propic + label {
+	border: none;
+	background-color:orange;
+	padding: 10 10 10 10;
+	font-size: 15px;
+ 	color: #005696;
+	position: absolute;
+	width:33%;
+	top: 86%;
+	left: 30%;
 }
+
+#propic + label:hover {
+	color:#000;
+}
+
+#submit{
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+}
+
+#submit + label {
+	border: none;
+	background-color:orange;
+	padding: 10 10 10 10;
+ 	color: #005696;
+	font-size: 15px;
+	position: absolute;
+	width: 33%;
+	top: 100%;
+	left: 30%;
+}
+
+#submit + label:hover {
+	color:#000;
+}
+
+
+
 
 .profilePic img{
 	position: absolute;
@@ -58,9 +94,9 @@ body{
 }
 #addItem {
     position:absolute;
-    top: 8%; left: 40%;
+    top: 13%; left: 40%;
     width: 15%;
-    background-color: #4caf50; 
+    background-color: orange; 
     border: none;
     color: white;
     padding: 10px 50px 10px 50px;
@@ -68,14 +104,13 @@ body{
 }
 #addItem:hover{
 	 color:#000;
-	 border: solid;
-	 border-color:#005696; 
 }
 
 .name{
+	color: orange;
 	position: absolute;
 	left:28%;
-	top: 5%;
+	top: 10%;
 	width:40%;
 }
 
