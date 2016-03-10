@@ -54,6 +54,11 @@ li a:hover {
    bottom: 0.5em;
    background-color: #005696;
 }
+.main form{
+	width: 0;
+	height: 0;
+	display: none;
+}
 div.img {
   position: absolute;
     top: 20px;

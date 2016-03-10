@@ -1,0 +1,4 @@
+<?php
+$id = $_POST['itemID'];
+echo($id);
+?>

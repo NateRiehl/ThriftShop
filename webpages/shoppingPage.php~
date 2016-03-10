@@ -8,7 +8,7 @@
 </head>
 <div class = "top">
 <ul>
-  <li><a href="#">My page</a></li>
+  <li><a href="profile.php">My page</a></li>
   <li><a href="homepage.php">Homepage</a></li>
 </ul>
 </div>
@@ -22,7 +22,8 @@ $id = $row['id'];
 $name=$row['name'];
 $price=$row['price'];
 $imageLink=$row['imageLink'];
-printf("<button type='submit' onclick=location.href='homepage.php';'><img src='$imageLink' alt='Mountain View' style='width:200px;height: 180px'> </br>%s %s</button> &nbsp;",$name, $price." dollars");
+printf("<form method='get' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>", $id, $id);
+printf("<button type='submit' form='%s'><img src='$imageLink' alt='Mountain View' style='width:200px;height: 180px'> </br>%s %s</button> &nbsp;",$id, $name, $price." dollars");
 }
 printf("</div>");
 ?>
