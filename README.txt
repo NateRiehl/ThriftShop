@@ -3,6 +3,7 @@ Modification History:
 CREATED 2/24/16
 UPDATED 3/06/16 with new goals
 UPDATED 3/07/16. Edited.
+UPDATE 3/10/16 CATEGORY table added and shoppingpage changes
 
 
 Recently Done:
@@ -16,6 +17,8 @@ Recently Done:
 	b. Put file methods in "fileutils.php"
 3. Setup email verification upon registration. i.e two accounts can't exist with same email
 4. Lots of css all over the place
+5. Added CATEGORY table that has attributes itemID and category(varchar). This allows for items to have multiple categories
+6. Each shoppingpage item now goes to itempage.php and sends itemID variable. This can be used to generate custom data for each user.
 
 
 NOTES/STEPS of what to do NEXT
@@ -28,8 +31,7 @@ NOTES/STEPS of what to do NEXT
 5. Bug checking. We should create more test users and see if we see errors.
 6. Create a new table with item id's and image links. This will allow for an item to have multiple images
 7. Categories
-	a. Probably should make a new table that has item id & category. This allows for one item to be in 		multiple categories
-	b. Integrate that table with appropriate php files
+	b. Integrate CATEGORY table with appropriate php files
 	c. Shopping page has to show only content with particular categories that are checked off
 8. Make it so certain pages don't display if the user is not logged in. This shouldn't be too hard
 8. ??? Lots of other stuff that I'm sure we'll find along the way. Overall, we are in awesome shape. 

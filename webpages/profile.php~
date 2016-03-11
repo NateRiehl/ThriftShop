@@ -9,10 +9,15 @@
 	<HEAD> 
 		<TITLE> Profile Page</TITLE>	
 		<link rel="stylesheet" type="text/css" href="../css/profileStyle.css">
+		<script> 
+			function showForm(){
+				document.getElementById("bioForm").style.display="block";
+			}
+		</script>
 	</HEAD>
 <BODY>
 	<DIV class = "tophalf"> </DIV> 
-	<DIV class = "lowhalf"></DIV>
+	<DIV class = "lowhalf">  </DIV>
 
 	<DIV class = "profilepic">
 	<?php
@@ -22,13 +27,13 @@
 		$imageLink=$row['imageLink'];
 		printf("<img src='$imageLink'>");
 	 ?>
-	 <!-- <button type='submit' onclick=location.href='#';> Change Profile Pic </button> -->
+
 	<table>
 		<form method="post" action="profile.php" enctype="multipart/form-data">
     		<input type="file" id="propic" name="propic"> &nbsp;
 		<label for="propic">Choose Profile Pic</label> 
-    		<input type="submit" value="click" id="submit" name="submit">
-		<label for="submit">Upload Profile Pic</label> 
+    		<input type="submit" id="submitProPic" name="submitProPic">
+		<label for="submitProPic">Upload Profile Pic</label> 
 		</form>
 	</table>
 	</DIV>
@@ -52,12 +57,23 @@
 		$bio=$row['bio'];
 		printf("<p> %s </p>", $bio);
 	?>
-	<button type='submit'  onclick=location.href='#';> Edit Bio </button>	
+	<form method="post" action="profile.php" id ='bioForm'>
+	<input type="text" id="newbio" name="newbio" placeholder="Enter new bio information here"> </input>
+	<input type="submit" value="Submit new info" name='submitBio'></input>
+	</form>
+	<button type='submit'  onclick="showForm()"> Edit Bio </button>	
 	</DIV>
 	
 <?php
-	if(isset($_POST["submit"])){
-	saveProPic($_FILES['propic']);
+	if(!empty($_POST["submitProPic"])){
+			saveProPic($_FILES['propic']);
+	}
+	if(!empty($_POST["submitBio"])){
+		$email = $_SESSION['email'];
+		$newbio = $_POST['newbio'];
+		$query = "UPDATE USER SET bio='$newbio' WHERE email = '$email'";
+		$result = $db->query($query);
+		header("Refresh:0");
 	}
 ?>
 

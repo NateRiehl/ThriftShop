@@ -2,6 +2,7 @@
 Modification History:
 CREATED 2/24/16
 UPDATED 3/06/16 with new goals
+UPDATED 3/07/16. Edited.
 
 
 Recently Done:
@@ -30,4 +31,5 @@ NOTES/STEPS of what to do NEXT
 	a. Probably should make a new table that has item id & category. This allows for one item to be in 		multiple categories
 	b. Integrate that table with appropriate php files
 	c. Shopping page has to show only content with particular categories that are checked off
+8. Make it so certain pages don't display if the user is not logged in. This shouldn't be too hard
 8. ??? Lots of other stuff that I'm sure we'll find along the way. Overall, we are in awesome shape. 

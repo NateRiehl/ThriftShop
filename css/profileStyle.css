@@ -27,6 +27,23 @@ body{
    
    /* background-color: orange;*/
 }
+
+.bio form{
+	display: none;	
+}
+input[type=text] {
+    border: none;
+    font-size: 15px;
+    padding: 0 0 10% 0;
+    width: 60%;
+}
+
+.editBio{
+	position: absolute;
+	width: 25%;
+	height: 25%;
+}
+
 .bio button{
     background-color: #005696;
     border: none;
@@ -82,13 +99,13 @@ body{
 	cursor: pointer;
 }
 
-#submit{
+#submitProPic{
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
 }
 
-#submit + label {
+#submitProPic + label {
 	border: none;
 	background-color:#005696;
 	padding: 10 10 10 10;
@@ -100,14 +117,11 @@ body{
 	left: 30%;
 }
 
-#submit + label:hover {
+#submitProPic + label:hover {
 	cursor: pointer;
 	border: solid;
 	border-color: white;
 }
-
-
-
 
 .profilePic img{
 	position: absolute;
