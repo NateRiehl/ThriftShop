@@ -1,0 +1,9 @@
+body{
+
+}
+
+.itemImg{
+	width: 25%;
+	height: 45%;
+
+}

@@ -35,3 +35,4 @@ NOTES/STEPS of what to do NEXT
 	c. Shopping page has to show only content with particular categories that are checked off
 8. Make it so certain pages don't display if the user is not logged in. This shouldn't be too hard
 8. ??? Lots of other stuff that I'm sure we'll find along the way. Overall, we are in awesome shape. 
+9. Fix Kevin link to pictures to redirect to Nate's imgs folder in shoppingPage.php
