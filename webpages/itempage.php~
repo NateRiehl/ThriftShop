@@ -31,7 +31,7 @@
 	</DIV>
 	
 	<DIV class = "description">
-	<?php
+	<?php //Get item's description and other associated info
 		$query = "SELECT * FROM ITEM WHERE id= '$id'";
 		$result = $db->query($query);
 		$row = $result->fetch();
@@ -45,6 +45,9 @@
 		printf("<h2>Description</h2>");
 		printf("<p> %s </br></br> Date Posted: %s </p>", $descript, $date);
 		printf("<h3> Seller Contact Email: %s <h3>", $sellerEmail);
+		
+		printf("<form method='post' action='profile.php' id='email'><input type='hidden' name='sellerEmail' value=%s> </form>", $sellerEmail);
+		printf("<button type='submit' form='email' value='Go to seller page'></button>");
 	?>	
 	</DIV> 
 

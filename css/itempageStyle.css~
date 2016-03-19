@@ -33,7 +33,7 @@ li a:hover {
 
 
 .imgBackground{
-	position:absolute;
+	position: absolute;
 	right: 70%;
 	background-color: #005696;
 }
@@ -49,6 +49,12 @@ li a:hover {
 	position:absolute;
 	left: 35%; 
 	top: 10%;
+}
+
+.description button{
+	padding: 10px 100px 10px 100px;
+	background-color: #005696;
+
 }
 
 

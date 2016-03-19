@@ -45,6 +45,9 @@
 		printf("<h2>Description</h2>");
 		printf("<p> %s </br></br> Date Posted: %s </p>", $descript, $date);
 		printf("<h3> Seller Contact Email: %s <h3>", $sellerEmail);
+		
+		printf("<form method='post' action='profile.php' id='email'><input type='hidden' name='sellerEmail' value=%s> </form>", $sellerEmail);
+		printf("<button type='submit' form='email'>Go to Seller's page</button>");
 	?>	
 	</DIV> 
 

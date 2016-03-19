@@ -51,4 +51,11 @@ li a:hover {
 	top: 10%;
 }
 
+.description button{
+	padding: 10px 100px 10px 100px;
+	background-color: #005696;
+	color: white;
+
+}
+
 

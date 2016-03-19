@@ -99,13 +99,13 @@ input[type=text] {
 	cursor: pointer;
 }
 
-#submit{
+#submitProPic{
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
 }
 
-#submit + label {
+#submitProPic + label {
 	border: none;
 	background-color:#005696;
 	padding: 10 10 10 10;
@@ -117,7 +117,7 @@ input[type=text] {
 	left: 30%;
 }
 
-#submit + label:hover {
+#submitProPic + label:hover {
 	cursor: pointer;
 	border: solid;
 	border-color: white;
@@ -131,21 +131,6 @@ input[type=text] {
 	height: 80%;
 	border-radius: 50%;
 }
-#addItem {
-    position:absolute;
-    top: 13%; left: 40%;
-    width: 15%;
-    background-color: orange; 
-    border: none;
-    color: white;
-    padding: 10px 50px 10px 50px;
-    font-size: 80%;
-}
-#addItem:hover{
-	border: solid;
-	border-color: #005696;
-	cursor: pointer;
-}
 
 .name{
 	color: orange;
@@ -154,6 +139,24 @@ input[type=text] {
 	top: 10%;
 	width:40%;
 }
+
+.name button {
+    position:absolute;
+    left: 50%;
+    top: 30%; 
+    width: 20%;
+    background-color: orange; 
+    border: none;
+    color: white;
+    padding: 10px 50px 10px 0px;
+    font-size: 80%;
+}
+.name button:hover{
+	border: solid;
+	border-color: #005696;
+	cursor: pointer;
+}
+
 
 .reviews{
     position:absolute;
