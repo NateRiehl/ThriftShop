@@ -1,9 +1,9 @@
 <?php
 	include_once('dbproj_connect.php');
 	$id = $_POST['itemID'];
-	//echo("ID is ". $id);
 ?>
 <html>
+	<!--This is the in-depth item page-->
 	<head>
 		<title> Item Page </title>
 		<link rel="stylesheet" type="text/css" href="../css/itempageStyle.css">
@@ -11,7 +11,7 @@
 
 
 <body>
-<div class ="imgBackground">,.,o </div>
+<div class ="imgBackground"> </div>
 
 <div class = "top">
 <ul>
@@ -21,7 +21,7 @@
 </div>
 	
 	<DIV class = "itemImg">
-	<?php
+	<?php	//get item's image
 		$query = "SELECT imageLink FROM ITEM WHERE id= '$id'";
 		$result = $db->query($query);
 		$row = $result->fetch();

@@ -1,5 +1,14 @@
 <?php
+/**
+* This php file has several utility methods to save various images to their appropriate location and name
+*/
 include_once('dbproj_connect.php');
+
+/**
+* Saves profile picture to imgs/
+* Format: image is saved as their email address since this is the primary key of USER table
+* 	Example: riehna01@gettysburg.edu
+*/
 function saveProPic($fileData) {
     $msg = "";
 
@@ -53,7 +62,11 @@ function saveProPic($fileData) {
 
     return $msg;
 }
-
+/**
+* Saves an item's image to imgs/
+* Format: itemID . originalFileName
+* 	Example: "31pants.png" 
+*/
 function saveItem($fileData) {
 
     // DEBUG: print each file data

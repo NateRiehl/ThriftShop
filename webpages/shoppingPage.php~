@@ -1,6 +1,8 @@
 <?php
 	//phpinfo();
 	include_once('dbproj_connect.php');
+	session_start();
+	$email = $_SESSION['email'];
 ?>
 <html>
 <head>
@@ -15,47 +17,62 @@
 
 <?php
 printf("<div class = 'main'>");
-$query = "SELECT * FROM ITEM;";
-$result = $db->query($query);
-while ($row = $result->fetch()) { // for each row in the result table
-$id = $row['id'];
-$name=$row['name'];
-$price=$row['price'];
-$imageLink=$row['imageLink'];
-printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>", $id, $id);
-printf("<button type='submit' form='%s'><img src='$imageLink' alt='Mountain View' style='width:200px;height: 180px'> </br>%s %s</button> &nbsp;",$id, $name, $price." dollars");
+if(empty($_POST['submitCategory'])){ //User is looking at all items
+	$query = "SELECT * FROM ITEM;";
+	$result = $db->query($query);
+	while ($row = $result->fetch()) { // for each row in the result table
+		$id = $row['id'];
+		$name=$row['name'];
+		$price=$row['price'];
+		$imageLink=$row['imageLink'];
+		printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>", $id, $id);
+		printf("<button type='submit' form='%s'><img src='$imageLink' style='width:200px;height: 180px'> </br>%s %s</button> &nbsp;",$id, $name, $price." dollars");
+		}
+}
+else{ //User has selected categories to narrow search
+	$itemCount = 0; //Keep track of number of items printed to screen
+	foreach($_POST['category'] as $category){
+		$query = "SELECT * FROM ITEM JOIN CATEGORY ON itemID=id WHERE category='$category'"; //Join category and item table based off of submitted form
+		$result = $db->query($query);
+		while ($row = $result->fetch()) { // for each row in the result table
+			$itemCount ++;
+			$id = $row['id'];
+			$name=$row['name'];
+			$price=$row['price'];
+			$imageLink=$row['imageLink'];
+			printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>", $id, $id);
+			printf("<button type='submit' form='%s'><img src='$imageLink' style='width:200px;height: 180px'> </br>%s %s</button> &nbsp;",$id, $name, $price." dollars");
+		}
+	}
+	if($itemCount == 0){ //No items in specified category(s)
+		echo("<p style='color:white; font-size: 30px;'>Sorry, no items in our store seem to match your search.</p>");
+	}
 }
 printf("</div>");
 ?>
 
 
 <div class = "right">
-<form name="categoryForm" method="POST" action="#">
-
+<form name="categoryForm" method="POST" action="shoppingPage.php">
 <table name="categories" align="center" border="0" cellspacing="0" cellpadding="0" >
-
 <caption><h3>Narrow your search: </h3></caption>
-
 <!-- row 6: check boxes -->
 <tr>
 <td>
-<input type="checkbox" name="cb[]" value="cbC1">Category <br />
-<input type="checkbox" name="cb[]" value="cbC2">Category <br />
-<input type="checkbox" name="cb[]" value="cbC3">Category <br />
-<input type="checkbox" name="cb[]" value="cbC3">Category <br />
-<input type="checkbox" name="cb[]" value="cbC3">Category <br />
-<input type="checkbox" name="cb[]" value="cbC3">Category <br />
-<input type="checkbox" name="cb[]" value="cbC3">Category <br />
-<input type="checkbox" name="cb[]" value="cbC4">Category 
+<input type="checkbox" name="category[]" value="Menswear">Menswear <br />
+<input type="checkbox" name="category[]" value="Womenswear">Womens clothing <br />
+<input type="checkbox" name="category[]" value="SportsApparel">Sports Apparel <br />
+<input type="checkbox" name="category[]" value="Other">Other <br />
+
 </td>
 </tr>
 
 <!-- row 10: submit button -->
 <tr>
-<td><input type="submit" value="Refresh" /></td>
+<td><input type="submit" name="submitCategory" value="Refresh" /></td>
 </tr>
 
 </table>
 </form>
 </div>
-
+</html>

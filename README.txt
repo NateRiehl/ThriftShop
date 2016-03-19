@@ -19,20 +19,19 @@ Recently Done:
 4. Lots of css all over the place
 5. Added CATEGORY table that has attributes itemID and category(varchar). This allows for items to have multiple categories
 6. Each shoppingpage item now goes to itempage.php and sends itemID variable. This can be used to generate custom data for each user.
-
+7. In depth item page (itempage.php) basics are done
 
 NOTES/STEPS of what to do NEXT
 .
 
-1. Set up in-depth product page/search
+1. Decide payment handling, etc. **ASK Professor Kim to see what she wants
 2. Documentation. One of us needs to go back and better comment each page
 3. Figure out how to show different content for different user profile page vs their own profile page
 4. CSS. Lots of styling left to do. 
 5. Bug checking. We should create more test users and see if we see errors.
 6. Create a new table with item id's and image links. This will allow for an item to have multiple images
 7. Categories
-	b. Integrate CATEGORY table with appropriate php files
-	c. Shopping page has to show only content with particular categories that are checked off
+	a. Item's shouldn't show up twice if in two categories
 8. Make it so certain pages don't display if the user is not logged in. This shouldn't be too hard
-8. ??? Lots of other stuff that I'm sure we'll find along the way. Overall, we are in awesome shape. 
 9. Fix Kevin link to pictures to redirect to Nate's imgs folder in shoppingPage.php
+

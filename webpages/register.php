@@ -1,4 +1,8 @@
 <?php
+/**
+* This page is a form for a user to register to website.
+* 	Calls "add_user.php" to process form
+*/
 include_once('dbproj_connect.php');
 ?>
 <HTML>	
@@ -6,7 +10,7 @@ include_once('dbproj_connect.php');
 		<title> Register for Thrift Shop</title>
 		<link rel="stylesheet" type="text/css" href="../css/registerStyle.css">
  <script type="text/javascript">
- //This function checks if the two passwords match each other and the form is submitted if they do
+ //This function checks if all information is valid
     function checkForm() { 
 		var fName = document.getElementById('Fname').value;
 		var lName = document.getElementById('Lname').value;
@@ -20,7 +24,6 @@ include_once('dbproj_connect.php');
 			alert("Last name required.");			
 		}        
 		else if(email == ""){ 
-			//should this be in php? in order to check for invalid email.
 			alert("Email address required.");
 		}
 		else if(pw == "" || pwCheck == ""){

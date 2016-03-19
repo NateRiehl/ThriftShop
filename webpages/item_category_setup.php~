@@ -1,0 +1,15 @@
+<?php
+/**
+* This php file holds the utility method to take an array of selected checkboxes
+* 	and add them to the CATEGORY table
+*/
+include_once('dbproj_connect.php');
+
+
+	function setupCategories($id, $categories){
+		foreach($categories as $category){
+			$query = "INSERT INTO CATEGORY VALUES ($id, '$category')";
+			$result=$GLOBALS['db']->query($query);
+		}
+	}
+?>

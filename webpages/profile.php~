@@ -1,4 +1,7 @@
 <?php
+/**
+* This page sets up the profile for a user
+*/
 	//phpinfo();
 	include_once('dbproj_connect.php');
 	include_once('fileutils.php');
@@ -9,7 +12,7 @@
 	<HEAD> 
 		<TITLE> Profile Page</TITLE>	
 		<link rel="stylesheet" type="text/css" href="../css/profileStyle.css">
-		<script> 
+		<script> //When user clicks to edit their bio, text box will show up
 			function showForm(){
 				document.getElementById("bioForm").style.display="block";
 			}
@@ -20,7 +23,7 @@
 	<DIV class = "lowhalf">  </DIV>
 
 	<DIV class = "profilepic">
-	<?php
+	<?php	//Get their profile picture
 		$query = "SELECT imageLink FROM USER WHERE email = '$email'";
 		$result = $db->query($query);
 		$row = $result->fetch(); 
@@ -37,6 +40,7 @@
 		</form>
 	</table>
 	</DIV>
+
 	<DIV class = "name">
 	<?php
 		$query = "Select Fname, Lname FROM USER WHERE email = '$email'";
@@ -46,7 +50,9 @@
 		printf("<h1> %s </h1>", $name);
 	?>
 	</DIV>
+
 	<button type='submit'  id="addItem" onclick=location.href='additem.php';> Add Item </button>
+
 	<DIV class = "bio">
 	<h1> About Me </h1>
 	<?php
@@ -65,9 +71,11 @@
 	</DIV>
 	
 <?php
+	//If they have submitted a new propic
 	if(!empty($_POST["submitProPic"])){
-			saveProPic($_FILES['propic']);
+			saveProPic($_FILES['propic']); //util method in "fileutils.php" that updates their propic
 	}
+	//If they have submitted a new bio
 	if(!empty($_POST["submitBio"])){
 		$email = $_SESSION['email'];
 		$newbio = $_POST['newbio'];
