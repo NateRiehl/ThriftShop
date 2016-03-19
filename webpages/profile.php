@@ -16,6 +16,9 @@
 			$email = $_POST['sellerEmail'];		
 		}
 	}
+	else{
+		$userspage = true;
+	}
 ?>
 <HTML>
 	<HEAD> 
