@@ -31,8 +31,21 @@ if(empty($_POST['submitCategory'])){ //User is looking at all items
 }
 else{ //User has selected categories to narrow search
 	$itemCount = 0; //Keep track of number of items printed to screen
+	$counter = 0;
+	$categories="";
 	foreach($_POST['category'] as $category){
-		$query = "SELECT * FROM ITEM JOIN CATEGORY ON itemID=id WHERE category='$category'"; //Join category and item table based off of submitted form
+		if($counter==0){
+			$categories="'".$category."'";
+		}
+		else{
+			$categories=$categories." AND c2.category="."'$category'";		
+		}
+		
+		$counter++;		
+	}
+		$query = "select DISTINCT * from ITEM JOIN (CATEGORY AS c1 JOIN CATEGORY AS c2 ON c1.itemID=c2.itemID) ON c1.itemID=id WHERE c1.category=$categories"; 	
+		//Join category and item table based off of submitted form
+
 		$result = $db->query($query);
 		while ($row = $result->fetch()) { // for each row in the result table
 			$itemCount ++;
@@ -43,7 +56,6 @@ else{ //User has selected categories to narrow search
 			printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>", $id, $id);
 			printf("<button type='submit' form='%s'><img src='$imageLink' style='width:200px;height: 180px'> </br>%s %s</button> &nbsp;",$id, $name, $price." dollars");
 		}
-	}
 	if($itemCount == 0){ //No items in specified category(s)
 		echo("<p style='color:white; font-size: 30px;'>Sorry, no items in our store seem to match your search.</p>");
 	}

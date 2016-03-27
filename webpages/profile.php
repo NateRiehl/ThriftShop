@@ -31,9 +31,9 @@
 		</script>
 	</HEAD>
 <BODY>
+	
+	<DIV class = "bod">
 	<DIV class = "tophalf"> </DIV> 
-	<DIV class = "lowhalf">  </DIV>
-
 	<DIV class = "profilepic">
 <?php		//Get their profile picture
 		$query = "SELECT imageLink FROM USER WHERE email = '$email'";
@@ -89,9 +89,42 @@
 		echo("<input type='submit' value='Submit new info' name='submitBio'></input>");
 		echo("</form>");
 		echo("<button type='submit'  onclick='showForm()'> Edit Bio </button>");	
-		echo('</DIV>');
+		
 	}
+	echo('</DIV>');
 ?>	
+	<DIV class = "reviews">
+<?php
+	$query = "SELECT * FROM REVIEW JOIN USER ON sellerEmail = email WHERE email='$email'";
+	$result = $db -> query($query);
+
+	if($userspage){
+		echo("<h1> My Reviews: </h1>");
+	}
+	else{ //Let them add a review if this isn't their own page
+		printf("<h1> Reviews for %s: </h1>", $name);
+		echo("<button type='submit'  id='addReview' onclick=location.href='addreview.php';> Add Review </button>");
+	}
+	while($row = $result->fetch()){ //Get each review of this user
+		printf("<DIV class=review>");
+		$title = $row['title'];
+		$numGrade= $row['numGrade'];
+		$item= $row['item'];
+		$comment= $row['comment'];
+		printf("<h2>%s</h2>", $title);
+		$count = 0;
+		while($count < $numGrade){ //Print stars
+			printf("<img src='imgs/star.png' style='width:20px;height: 18px;position:relative;'>");
+			$count++;	
+		}
+		printf("<p>Item bought: %s</p>", $item);
+		printf("<p> %s </p>", $comment);
+		echo("</DIV>");
+	}
+?>
+	</DIV>
+
+
 
 <?php
 	//submitted a new propic
@@ -107,7 +140,7 @@
 		header("Refresh:0");
 	}
 ?>
-
+</DIV>
 </BODY>
 </HTML>
 

@@ -1,31 +1,30 @@
-body{
-
+.bod{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  background-color: orange;
 }
+
 .tophalf{
 	position: absolute;
-	width: 100%;
-	height:37%;
 	top: 0;
 	left: 0;
+	right: 0;
+	height:37%;
 	background-color: #005696;
 }
-.lowhalf{
-	position: absolute;
-	width:100%;
-	top: 37%;
-	left:0;
-	height: 63%;
-	background-color:#ffa31a;
-}
+
 
 .bio {
     position:absolute;
-    left: 28%; top: 34%;
+    left: 28%; top: 38%;
     width: 60%;
-    height: 50%;
+    height: 30%;
     font-color: white;
-   
-   /* background-color: orange;*/
+
 }
 
 .bio form{
@@ -59,10 +58,6 @@ input[type=text] {
 	border: solid;
 	border-color: white;
 	cursor: pointer;
-}
-
-.bio h1{
-
 }
 
 .profilepic{
@@ -160,8 +155,24 @@ input[type=text] {
 
 .reviews{
     position:absolute;
-    right:75%; top:100px; bottom: 0; left:50px;
-    width: 25%;
-    height: 450px;
-    background-color: orange;
+    left: 28%; top:55%;
+    width: 50%;
+	
 }
+.reviews button{
+	position: relative;
+	border: none;	
+	width: 30%;
+	background-color:  #005696;
+	color: white;
+	margin-bottom: 1%;
+}
+.reviews .review{
+
+	border: solid;
+	border-color: #005696;
+	font-size: 10px;
+}
+
+
+
