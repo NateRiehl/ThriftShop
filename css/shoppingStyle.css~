@@ -1,8 +1,16 @@
 /*Style sheet for shopping page */
+
+.fullscreen{
+    position:absolute;
+    top:0;left:0; right:0; bottom:0;
+    height: 100%;
+    background-color: #005696;
+}
 .top {
     position:absolute;
-    top:0;left:0; right:0;
-    height: 92px;
+    top:0;left:0; 
+    width: 80%;	
+    height: 10%;
     background-color: #005696;
 }
 ul {
@@ -28,53 +36,71 @@ li a:hover {
 }
 .right {
     position:absolute;
-    right:0; top:0px; bottom: 0;
-    width: 200px;
-    height: 1100;
+    right:0;  bottom: 0;
+    width: 15%;
+    height: 100%;
     background-color: orange;
 }
 .main {
     position: absolute;
-	height:1000;
-    right:178px; top:92px; left:0; bottom:0;
-     background-color: #005696;
+    top: 10%;
+    left: 5%;
+    height:90%;
+    width: 80%;
+    background-color: #005696;
 
 }
-.tile {
-   float: left;
-   position: relative;
-   width: 20%;
-   padding-bottom: 20%;
-}
-.content {
-   position: absolute;
-   left: 0.5em;
-   right: 0.5em;
-   top: 0.5em;
-   bottom: 0.5em;
-   background-color: #005696;
-}
-.main form{
-	width: 0;
-	height: 0;
-}
-div.img {
-  position: absolute;
-    top: 20px;
-    bottom: 20px
-    right: 20;
-    left: 20;
-}
-div button {
-	background-color: orange; 
+.main .item{
+    position: relative;
+    float: left;
+    background-color: orange; 
     border: none;
     color: white;
-    padding: 10px 10px 10px 10px;
+ 
     font-size: 80%;
+    height: 25%;
+    width: 15%;	
+    margin-right: 10px;
     margin-bottom:10px;
 }
-div button:hover{
-	 color:#000;
+
+.main .item:hover{
+	/*Something..*/
+}
+
+.main .item form{
+	width: 0;
+	height: 0;
+	display: none;
+}
+
+.main .item button {
+   	position:relative:
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: orange;
+	border: none;	
+}
+.main .item button:hover{
+	 color:#005696;
+	 border: solid;
+	 border-color: orange;	
+}
+.main .item .itemimg{
+	position: relative; 
+	top: 1%; 
+	width: 80%; 
+	height: 90%;
+}
+.main .item .sold img{
+	position: absolute;
+	top: 30px;
+	left: 60px;
+	width: 60%;
+	height: 60%;
 }
 @media (max-width: 30em){
   .tile{

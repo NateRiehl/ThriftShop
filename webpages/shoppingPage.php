@@ -8,6 +8,8 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/shoppingStyle.css">
 </head>
+<body>
+<div class="fullscreen">
 <div class = "top">
 <ul>
   <li><a href="profile.php">My page</a></li>
@@ -21,12 +23,20 @@ if(empty($_POST['submitCategory'])){ //User is looking at all items
 	$query = "SELECT * FROM ITEM;";
 	$result = $db->query($query);
 	while ($row = $result->fetch()) { // for each row in the result table
+		echo("<div class = 'item'>");
 		$id = $row['id'];
 		$name=$row['name'];
 		$price=$row['price'];
 		$imageLink=$row['imageLink'];
+		$sold = $row['sold'];
 		printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>", $id, $id);
-		printf("<button type='submit' form='%s'><img src='$imageLink' style='width:200px;height: 180px'> </br>%s %s</button> &nbsp;",$id, $name, $price." dollars");
+		printf("<button type='submit' form='%s'><img src='$imageLink' class='itemimg'> </br>%s %s</button> &nbsp;",$id, $name, $price." dollars");
+		echo("<div class='sold'>");
+		if($sold == 1){
+			echo("<img src='imgs/sold.gif'>");
+		}
+		echo("</div>");
+		echo("</div>");
 		}
 }
 else{ //User has selected categories to narrow search
@@ -86,4 +96,6 @@ printf("</div>");
 </table>
 </form>
 </div>
+</div>
+</body>
 </html>

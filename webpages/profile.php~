@@ -97,12 +97,12 @@
 <?php
 	$query = "SELECT * FROM REVIEW JOIN USER ON sellerEmail = email WHERE email='$email'";
 	$result = $db -> query($query);
-
+	echo($query);
 	if($userspage){
 		echo("<h1> My Reviews: </h1>");
 	}
 	else{ //Let them add a review if this isn't their own page
-		printf("<h1> Reviews of %s </h1>", $name);
+		printf("<h1> Reviews for %s: </h1>", $name);
 		echo("<button type='submit'  id='addReview' onclick=location.href='addreview.php';> Add Review </button>");
 	}
 	while($row = $result->fetch()){ //Get each review of this user
