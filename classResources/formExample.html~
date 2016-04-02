@@ -98,9 +98,6 @@
 <td><input type="submit" value="submit form" /></td>
 </tr>
 
-
-
-
 <!-- row 11: reset button -->
 <tr>
 <td>reset</td>

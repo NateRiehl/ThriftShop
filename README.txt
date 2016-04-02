@@ -4,6 +4,7 @@ CREATED 2/24/16
 UPDATED 3/06/16 with new goals
 UPDATED 3/07/16. Edited.
 UPDATE 3/10/16 CATEGORY table added and shoppingpage changes
+UPDATE 3/26/16 Reviews 
 
 
 Recently Done:
@@ -21,7 +22,9 @@ Recently Done:
 6. Each shoppingpage item now goes to itempage.php and sends itemID variable. This can be used to generate custom data for each user.
 7. In depth item page (itempage.php) basics are done
 8. Figure out how to show different content for different user profile page vs their own profile page
-9. Make it so certain pages don't display if the user is not logged in. This shouldn't be too hard
+9. Made it so certain pages don't display if the user is not logged in. 
+10. Set up Review page
+
 
 NOTES/STEPS of what to do NEXT
 .
@@ -38,4 +41,4 @@ NOTES/STEPS of what to do NEXT
 11. Only items that are not sold should show up. Items that are sold will have sold label
 12. Seller should be able to edit items they are selling 
 	a. Mark item as sold and say who bought it
-13. Add item column to review
+

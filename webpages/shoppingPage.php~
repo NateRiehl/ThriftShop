@@ -38,12 +38,13 @@ else{ //User has selected categories to narrow search
 			$categories="'".$category."'";
 		}
 		else{
-			$categories=$categories." AND c2.category="."'$category'";		
+			$categories=$categories." OR category="."'$category'";		
 		}
 		
 		$counter++;		
 	}
-		$query = "select * from ITEM JOIN (CATEGORY AS c1 JOIN CATEGORY AS c2 ON c1.itemID=c2.itemID) ON c1.itemID=id WHERE c1.category=$categories"; 	
+		$query = "select * from ITEM AS i1 group by i1.id having COUNT(i1.id) = (SELECT COUNT(i2.id) FROM ITEM AS i2 JOIN CATEGORY AS c1 ON c1.itemID=i2.id WHERE category=$categories AND i2.id=i1.id GROUP BY i2.id)"; 
+		echo($query);	
 		//Join category and item table based off of submitted form
 
 		$result = $db->query($query);
