@@ -5,6 +5,7 @@
     top:0;left:0; right:0; bottom:0;
     height: 100%;
     background-color: #005696;
+    overflow: auto;
 }
 .top {
     position:absolute;
@@ -40,6 +41,7 @@ li a:hover {
     width: 20%;
     height: 100%;
     background-color: orange;
+    overflow: auto;
 }
 .main {
     position: absolute;
@@ -50,7 +52,7 @@ li a:hover {
     background-color: #005696;
 
 }
-.main .item{
+ .item{
     position: relative;
     float: left;
     background-color: orange; 
@@ -58,7 +60,7 @@ li a:hover {
     color: white;
  
     font-size: 80%;
-    height: 30%;
+    height: 35%;
     width: 20%;	
     margin-right: 10px;
     margin-bottom:10px;
@@ -92,7 +94,7 @@ li a:hover {
 .main .item .itemimg{
 	position: relative; 
 	top: 1%; 
-	width: 80%; 
+	width: 95%; 
 	height: 90%;
 }
 .main .item .sold img{

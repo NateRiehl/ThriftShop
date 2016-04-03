@@ -142,7 +142,7 @@ input[type=submit]:hover {
 #propic + label {
 	border: none;
 	background-color:orange;
-	padding: 5 10 5 10;
+	padding: 5 5 5 5;
 	margin-bottom: 1px;
 	font-size: 15px;
  	color: white;
@@ -254,6 +254,7 @@ text-align: center;
 .selling{
 	position: relative;
 	top: -70%;
+	left: 60%;
 	width: 40%;
 }
 
