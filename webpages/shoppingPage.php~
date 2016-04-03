@@ -2,6 +2,9 @@
 	//phpinfo();
 	include_once('dbproj_connect.php');
 	session_start();
+	if(!isset($_SESSION['email'])){
+		header('Location: http://www.cs.gettysburg.edu/~riehna01/cs360/webpages/homepage.php');
+	}
 	$email = $_SESSION['email'];
 ?>
 <html>
@@ -33,7 +36,7 @@ if(empty($_POST['submitCategory'])){ //User is looking at all items
 		printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>", $id, $id);
 		printf("<button type='submit' form='%s'><img src='$imageLink' class='itemimg'> </br>%s %s</button> &nbsp;",$id, $name, $price." dollars");
 		echo("<div class='sold'>");
-		if($sold == 0){
+		if($sold == 1){
 			echo("<img src='imgs/sold.gif'>");
 		}
 		echo("</div>");

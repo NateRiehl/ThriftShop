@@ -2,6 +2,9 @@
 	//phpinfo();
 	include_once('dbproj_connect.php');
 	session_start();
+	if(!isset($_SESSION['email'])){ //Make sure user is logged in..Otherwise, send them to login page
+		header('Location: http://www.cs.gettysburg.edu/~riehna01/cs360/webpages/homepage.php');
+	}
 	$email = $_SESSION['email'];
 ?>
 <html>

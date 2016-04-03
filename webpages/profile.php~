@@ -6,6 +6,9 @@
 	include_once('dbproj_connect.php');
 	include_once('fileutils.php');
 	session_start();
+	if(!isset($_SESSION['email'])){ //Make sure user is logged in..Otherwise, send them to login page
+		header('Location: http://www.cs.gettysburg.edu/~riehna01/cs360/webpages/homepage.php');
+	}
 	$email = $_SESSION['email'];
 	$userspage = false; //This is a boolean flag to check if user is on their own page
 	if(isset($_POST['sellerEmail'])){
@@ -27,6 +30,9 @@
 		<script> //When user clicks to edit their bio, text box will show up
 			function showForm(){
 				document.getElementById("bioForm").style.display="block";
+				document.getElementById("newbio").style.display="block";
+				document.getElementById("editbio").style.display="none";
+				document.getElementById("bioInfo").style.display="none";
 			}
 		</script>
 	</HEAD>
@@ -37,8 +43,8 @@
 	<DIV class = "tophalf"> 
 	<div class = "linkpanel">
 		<ul>
-  			<li><a href="profile.php">My page</a></li>
-  			<li><a href="logout.php">Log out</a></li>
+  			<li><a href="shoppingPage.php">Shopping Page</a></li>
+  			<li><a href="logout.php">Log Out</a></li>
 
 		</ul>
 	</div>
@@ -83,10 +89,11 @@
 		if($userspage == true){
 			echo("<h1> About Me: </h1>");
 			echo("<form method='post' action='profile.php' id ='bioForm'>");
-			echo("<input type='text' id='newbio' name='newbio' placeholder='Enter new bio information here'> </input>");
-			echo("<input type='submit' value='Submit new info' name='submitBio'></input>");
+			echo("<input type='submit' id='submitBio' name='submitBio' value='Submit Bio'></input>");
 			echo("</form>");
-			echo("<button type='submit'  onclick='showForm()'> Edit Bio </button>");	
+			echo("<textarea rows='10' cols='100' form='bioForm' id='newbio' name='newbio' placeholder='Enter new bio information here'> </textarea>");
+			
+			echo("<button type='submit'  onclick='showForm()' id='editbio'> Edit Bio </button>");	
 		}
 		else{
 			printf("<h1> About %s: </h1>", $row['Fname']);			
@@ -97,7 +104,7 @@ echo('</DIV>');
 		$result = $db->query($query);
 		$row = $result->fetch(); 
 		$bio=$row['bio'];
-		echo("<DIV class='bioInfo' align='left'>");
+		echo("<DIV class='bioInfo' id='bioInfo' align='left'>");
 		printf(" %s ", $bio);
 		echo("</DIV>");
 	
@@ -134,8 +141,25 @@ echo('</DIV>');
 ?>
 	</DIV>
 
-
-
+	<DIV class='selling'>
+		<?php
+			if($userspage){
+				echo("<h1>My Current items in marketplace:</h1>");
+			}
+			else{
+				echo("<h1>Current items in marketplace:</h1>");
+			}
+			$query = "select * from ITEM JOIN USER ON email=sellerEmail WHERE email='$email'";
+			$result = $db->query($query);
+			if($result != false){
+				while($row = $result->fetch()){
+				$name=$row['name'];
+				$price=$row['price'];
+				echo("$name $price");
+				}
+			}
+		?>
+	</DIV>
 <?php
 	//submitted a new propic
 	if(!empty($_POST["submitProPic"])){
