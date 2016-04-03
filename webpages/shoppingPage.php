@@ -13,7 +13,8 @@
 <div class = "top">
 <ul>
   <li><a href="profile.php">My page</a></li>
-  <li><a href="homepage.php">Homepage</a></li>
+  <li><a href="logout.php">Log out</a></li>
+
 </ul>
 </div>
 

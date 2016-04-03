@@ -1,6 +1,8 @@
 <?php
 	include_once('dbproj_connect.php');
 	$id = $_POST['itemID'];
+	session_start();
+	$userEmail=$_SESSION['email'];
 ?>
 <html>
 	<!--This is the in-depth item page-->
@@ -42,12 +44,23 @@
 		$sellerEmail=$row['sellerEmail']; 
 		printf("<h1> %s </h1>", $name);	
 		printf("<h2>Price: $%s </h2>", $price);
-		printf("<h2>Description</h2>");
+		printf("<h2>Description: </h2>");
 		printf("<p> %s </br></br> Date Posted: %s </p>", $descript, $date);
-		printf("<h3> Seller Contact Email: %s <h3>", $sellerEmail);
-		
+		if($sellerEmail != $userEmail){
+			printf("<h3> Seller: %s <h3>", $sellerEmail);
+		}
+		else{
+			echo("<h3>Seller</h3>: Me");
+		}
 		printf("<form method='post' action='profile.php' id='email'><input type='hidden' name='sellerEmail' value=%s> </form>", $sellerEmail);
-		printf("<button type='submit' form='email' value='Go to seller page'></button>");
+		printf("<form method='post' action='edititem.php' id='edititem'><input type='hidden' name='itemID' value=%s> </form>", $id);
+		if($sellerEmail == $userEmail){
+			printf("<button type='submit' form='email'>Go to my page</button>");
+			printf("<button type='submit' form='edititem'>Edit my item</button>");
+		}
+		else{
+			printf("<button type='submit' form='email'>Go to Seller's page</button>");
+		}
 	?>	
 	</DIV> 
 

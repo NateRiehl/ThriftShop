@@ -13,7 +13,8 @@
 <div class = "top">
 <ul>
   <li><a href="profile.php">My page</a></li>
-  <li><a href="homepage.php">Homepage</a></li>
+  <li><a href="logout.php">Log out</a></li>
+
 </ul>
 </div>
 
@@ -32,7 +33,9 @@ if(empty($_POST['submitCategory'])){ //User is looking at all items
 		printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>", $id, $id);
 		printf("<button type='submit' form='%s'><img src='$imageLink' class='itemimg'> </br>%s %s</button> &nbsp;",$id, $name, $price." dollars");
 		echo("<div class='sold'>");
+		if($sold == 0){
 			echo("<img src='imgs/sold.gif'>");
+		}
 		echo("</div>");
 		echo("</div>");
 		}

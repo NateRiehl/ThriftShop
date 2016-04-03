@@ -37,7 +37,7 @@ li a:hover {
 .right {
     position:absolute;
     right:0;  bottom: 0;
-    width: 15%;
+    width: 20%;
     height: 100%;
     background-color: orange;
 }
@@ -58,8 +58,8 @@ li a:hover {
     color: white;
  
     font-size: 80%;
-    height: 25%;
-    width: 15%;	
+    height: 30%;
+    width: 20%;	
     margin-right: 10px;
     margin-bottom:10px;
 }

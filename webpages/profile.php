@@ -33,7 +33,15 @@
 <BODY>
 	
 	<DIV class = "bod">
-	<DIV class = "tophalf"> </DIV> 
+	
+	<DIV class = "tophalf"> 
+	<div class = "linkpanel">
+		<ul>
+  			<li><a href="shoppingpage.php">Shopping Page</a></li>
+  			<li><a href="logout.php">Log Out</a></li>
+
+		</ul>
+	</div>
 	<DIV class = "profilepic">
 <?php		//Get their profile picture
 		$query = "SELECT imageLink FROM USER WHERE email = '$email'";
@@ -62,37 +70,39 @@
 		$result = $db->query($query);
 		$row = $result->fetch(); 
 		$name = $row['Fname'] . " " . $row['Lname'];
-		printf("<h1> %s </h1>", $name);
+		printf(" %s ", $name);
 		if($userspage == true){
 			echo("<button type='submit'  id='addItem' onclick=location.href='additem.php';> Add Item </button>");
 		}
 ?>
 	</DIV>
-
+</DIV> 
+<DIV class = "bottomhalf">
 	<DIV class = "bio">
 <?php
 		if($userspage == true){
-			echo("<h1> About Me </h1>");	
+			echo("<h1> About Me: </h1>");
+			echo("<form method='post' action='profile.php' id ='bioForm'>");
+			echo("<input type='text' id='newbio' name='newbio' placeholder='Enter new bio information here'> </input>");
+			echo("<input type='submit' value='Submit new info' name='submitBio'></input>");
+			echo("</form>");
+			echo("<button type='submit'  onclick='showForm()'> Edit Bio </button>");	
 		}
 		else{
-			printf("<h1> About %s </h1>", $row['Fname']);			
+			printf("<h1> About %s: </h1>", $row['Fname']);			
 		}
+
+echo('</DIV>');
 		$query = "SELECT bio FROM USER WHERE email = '$email'";
 		$result = $db->query($query);
 		$row = $result->fetch(); 
 		$bio=$row['bio'];
-		printf("<p> %s </p>", $bio);
-
-	if($userspage == true){
-		echo("<form method='post' action='profile.php' id ='bioForm'>");
-		echo("<input type='text' id='newbio' name='newbio' placeholder='Enter new bio information here'> </input>");
-		echo("<input type='submit' value='Submit new info' name='submitBio'></input>");
-		echo("</form>");
-		echo("<button type='submit'  onclick='showForm()'> Edit Bio </button>");	
-		
-	}
-	echo('</DIV>');
+		echo("<DIV class='bioInfo' align='left'>");
+		printf(" %s ", $bio);
+		echo("</DIV>");
+	
 ?>	
+
 	<DIV class = "reviews">
 <?php
 	$query = "SELECT * FROM REVIEW JOIN USER ON sellerEmail = email WHERE email='$email'";
@@ -114,11 +124,11 @@
 		printf("<h2>%s</h2>", $title);
 		$count = 0;
 		while($count < $numGrade){ //Print stars
-			printf("<img src='imgs/star.png' style='width:20px;height: 18px;position:relative;'>");
+			printf("<img src='imgs/star.png' style='width:20px;height: 18px;position:relative; top: 5%%; float: left;'>");
 			$count++;	
 		}
 		printf("<p>Item bought: %s</p>", $item);
-		printf("<p> %s </p>", $comment);
+		printf(" %s ", $comment);
 		echo("</DIV>");
 	}
 ?>
@@ -140,6 +150,7 @@
 		header("Refresh:0");
 	}
 ?>
+</DIV>
 </DIV>
 </BODY>
 </HTML>
