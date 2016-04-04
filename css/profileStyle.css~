@@ -1,12 +1,16 @@
 .html{
 padding:0px;
-margin: 0px;}
+margin: 0px;
+background-color: orange;
+}
+
 .bod{
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  height: 100%;
   padding:0px;
   margin: 0px;
   background-color: orange;
@@ -253,7 +257,7 @@ text-align: center;
 
 .selling{
 	position: absolute;
-	top: 40%;
+	top: 45%;
 	left: 60%;
 	width: 40%;
 }
