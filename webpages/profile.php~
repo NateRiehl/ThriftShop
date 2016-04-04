@@ -110,7 +110,7 @@ echo('</DIV>');
 	
 ?>	
 
-	<DIV class = "reviews">
+<DIV class = "reviews">
 <?php
 	$query = "SELECT * FROM REVIEW JOIN USER ON sellerEmail = email WHERE email='$email'";
 	$result = $db -> query($query);
@@ -120,7 +120,9 @@ echo('</DIV>');
 	}
 	else{ //Let them add a review if this isn't their own page
 		printf("<h1> Reviews for %s: </h1>", $name);
-		echo("<button type='submit'  id='addReview' onclick=location.href='addreview.php';> Add Review </button>");
+		$email = $_POST['sellerEmail'];
+		printf("<form method='post' action='addreview.php' id='addreview'><input type='hidden' name='email' value=%s> </form>", $email);
+		echo("<button type='submit'  form='addreview'> Add Review </button>");
 	}
 	while($row = $result->fetch()){ //Get each review of this user
 		printf("<DIV class=review>");
@@ -139,7 +141,7 @@ echo('</DIV>');
 		echo("</DIV>");
 	}
 ?>
-	</DIV>
+</DIV>
 
 	<DIV class='selling'>
 		<?php
@@ -155,7 +157,7 @@ echo('</DIV>');
 				while($row = $result->fetch()){
 				$name=$row['name'];
 				$price=$row['price'];
-				echo("$name $price");
+				echo("$name $price <br>");
 				}
 			}
 		?>

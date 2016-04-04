@@ -3,9 +3,9 @@ Modification History:
 CREATED 2/24/16
 UPDATED 3/06/16 with new goals
 UPDATED 3/07/16. Edited.
-UPDATE 3/10/16 CATEGORY table added and shoppingpage changes
-UPDATE 3/26/16 Reviews 
-
+UPDATED 3/10/16 CATEGORY table added and shoppingpage changes
+UPDATED 3/26/16 Reviews 
+UPDATED 4/04/16 Currently selling, addreview, add_review
 
 Recently Done:
 1. Created "profile.php". This is the user's personal page.
@@ -24,21 +24,28 @@ Recently Done:
 8. Figure out how to show different content for different user profile page vs their own profile page
 9. Made it so certain pages don't display if the user is not logged in. 
 10. Set up Review page
+11. Only items that are not sold should show up. Items that are sold will have sold label
+	a. I added sold attribute to ITEM and made necessary changes on shoppingpage
+12. Seller page shows what items they are selling
 
 
 NOTES/STEPS of what to do NEXT
 .
-
-1. Decide payment handling, etc. 
-2. Documentation. One of us needs to go back and better comment each page
-4. CSS. Lots of styling left to do. 
-5. Bug checking. We should create more test users and see if we see errors.
-6. Create a new table with item id's and image links. This will allow for an item to have multiple images
-7. Categories
+1. Documentation. One of us needs to go back and better comment each page
+2. CSS. Lots of styling left to do. 
+3. Bug checking. We should create more test users and see if we see errors.
+4. Create a new table with item id's and image links. This will allow for an item to have multiple images
+5. Categories
 	a. Item's shouldn't show up twice if in two categories
-9. Fix Kevin link to pictures to redirect to Nate's imgs folder in shoppingPage.php
-10. Seller page shows what items they are selling
-11. Only items that are not sold should show up. Items that are sold will have sold label
-12. Seller should be able to edit items they are selling 
-	a. Mark item as sold and say who bought it
+6. Fix Kevin link to pictures to redirect to Nate's imgs folder in shoppingPage.php
+7. Format "currently selling" on profile.php
+8. Seller should be able to edit items they are selling 
+	a. Itempage has button "edit item" that should go to new page with form that updates database
+		aa. Seller can update details of item or mark item as sold and say who bought it
+9. Item page should have "buy item" page that takes them to another page with fake "checkout" form
+	a. When "checkout" form is submitted, item is edited in DB to have sold == 1 (true)
+		and buyerEmail == email of person who bought it
+
+
+
 

@@ -252,8 +252,8 @@ text-align: center;
 }
 
 .selling{
-	position: relative;
-	top: -70%;
+	position: absolute;
+	top: 45%;
 	left: 60%;
 	width: 40%;
 }
