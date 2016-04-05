@@ -33,9 +33,9 @@
 		<td><input type='text' name='description' id='description' placeholder='<?php echo($row['description']);?>'/> </td>
 	</tr>
 	<tr>
-		<td>Sold? Yes <input type='radio' name ='sold' id='sold' value='Yes'
+		<td>Sold? Yes <input type='radio' name ='sold' id='yes' value='Yes'
 					<?php if($row['sold'] == 1){echo('checked');} ?>/>
-				  No<input type='radio' name ='sold' id='sold' value='No'
+				  No<input type='radio' name ='sold' id='no' value='No'
 					<?php if($row['sold'] == 0){echo('checked');} ?>/>
 			 </td>
 	</tr>

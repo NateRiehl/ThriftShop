@@ -45,6 +45,15 @@ li a:hover {
     height: auto;
 }
 
+//Fix sold oritentation
+.itemImg .sold img{
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	width: 60%;
+	height: 60%;
+}
+
 .description{
 	position:absolute;
 	left: 35%; 
@@ -52,6 +61,7 @@ li a:hover {
 }
 
 .description button{
+	margin-right: 1%;
 	background-color: #005696;
 	color: white;
 }

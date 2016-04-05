@@ -24,11 +24,19 @@
 	
 	<DIV class = "itemImg">
 	<?php	//get item's image
-		$query = "SELECT imageLink FROM ITEM WHERE id= '$id'";
+		$query = "SELECT imageLink,sold FROM ITEM WHERE id= '$id'";
 		$result = $db->query($query);
 		$row = $result->fetch();
 		$imageLink=$row['imageLink'];
-		printf("<img src='$imageLink'>");
+		$sold = $row['sold'];
+
+		
+		echo("<img src='$imageLink'>");
+		echo("<div class='sold'>");
+		if($sold == 1){
+			echo("<img src='imgs/sold.gif'>");
+		}
+		echo("</div>");
 	?>
 	</DIV>
 	
@@ -50,7 +58,7 @@
 			printf("<h3> Seller: %s <h3>", $sellerEmail);
 		}
 		else{
-			echo("<h3>Seller</h3>: Me");
+			echo("<h3>Seller: Me</h3>");
 		}
 		printf("<form method='post' action='profile.php' id='email'><input type='hidden' name='sellerEmail' value=%s> </form>", $sellerEmail);
 		printf("<form method='post' action='edititem.php' id='edititem'><input type='hidden' name='itemID' value=%s> </form>", $id);

@@ -45,6 +45,14 @@ li a:hover {
     height: auto;
 }
 
+.itemImg .sold img{
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	width: 60%;
+	height: 60%;
+}
+
 .description{
 	position:absolute;
 	left: 35%; 

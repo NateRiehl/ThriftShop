@@ -21,16 +21,16 @@
 		<form name='fmEdit' method = 'POST' action = 'edit_item.php'>
 		<table cellpadding="0" cellspacing="5">
 		<tr>
- 		<td>Item ID: <input type='text' name='itemID' id='itemID' value='<?php echo($itemID);?>' readonly/> </td>
+ 		<td><input type='text' name='itemID' id='itemID' value='<?php echo($itemID);?>' readonly/> </td>
 		</tr>
 		<tr>
- 		<td>Item Name: <input type='text' name='name' id='name' placeholder='<?php echo($itemName);?>'/> </td>
+ 		<td><input type='text' name='name' id='name' placeholder='<?php echo($itemName);?>'/> </td>
 		</tr>
 		<tr>
- 		<td>Price: <input type='number' name='price' id='price' placeholder='<?php echo($row['price']);?>'/> </td>
+ 		<td><input type='number' name='price' id='price' placeholder='<?php echo($row['price']);?>'/> </td>
 	</tr>
 	<tr>
-		<td>Description: <input type='text' name='description' id='description' placeholder='<?php echo($row['description']);?>'/> </td>
+		<td><input type='text' name='description' id='description' placeholder='<?php echo($row['description']);?>'/> </td>
 	</tr>
 	<tr>
 		<td>Sold? Yes <input type='radio' name ='sold' id='sold' value='Yes'

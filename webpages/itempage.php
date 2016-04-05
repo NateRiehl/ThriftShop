@@ -24,11 +24,18 @@
 	
 	<DIV class = "itemImg">
 	<?php	//get item's image
-		$query = "SELECT imageLink FROM ITEM WHERE id= '$id'";
+		$query = "SELECT imageLink,sold FROM ITEM WHERE id= '$id'";
 		$result = $db->query($query);
 		$row = $result->fetch();
 		$imageLink=$row['imageLink'];
-		printf("<img src='$imageLink'>");
+		$sold = $row['sold'];
+		echo("<img src='$imageLink'>");
+		//Print the sold logo
+		echo("<div class='sold'>");
+		if($sold == 1){
+			echo("<img src='imgs/sold.gif'>");
+		}
+		echo("</div>");
 	?>
 	</DIV>
 	
