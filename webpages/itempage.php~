@@ -72,12 +72,11 @@
 		if($sellerEmail == $userEmail){
 			printf("<button type='submit' form='email'>Go to my page</button>");
 			printf("<button type='submit' form='edititem'>Edit my item</button>");
-		
-		//Possibly make this button styled differently??
-			printf("<button type='submit' form='checkout'>Buy Item</button>");
 		}
 		else{
 			printf("<button type='submit' form='email'>Go to Seller's page</button>");
+		//Possibly make this button styled differently??
+			printf("<button type='submit' form='checkout'>Buy Item</button>");
 		}
 	?>	
 	</DIV> 

@@ -76,7 +76,9 @@
 		else{
 			printf("<button type='submit' form='email'>Go to Seller's page</button>");
 		//Possibly make this button styled differently??
+			if($sold == 0){
 			printf("<button type='submit' form='checkout'>Buy Item</button>");
+			}
 		}
 	?>	
 	</DIV> 

@@ -22,27 +22,32 @@ Recently Done:
 6. Each shoppingpage item now goes to itempage.php and sends itemID variable. This can be used to generate custom data for each user.
 7. In depth item page (itempage.php) basics are done
 8. Figure out how to show different content for different user profile page vs their own profile page
+
+*******************SINCE LAST MEETING W/ PROFESSOR KIM:*****************
+
 9. Made it so certain pages don't display if the user is not logged in. 
-10. Set up Review page
+10. Set up Reviews
+	a. Reviews can be seen on profile page. Stars corresponding with numgrade
+	b. Reviews can be added to other users
 11. Only items that are not sold should show up. Items that are sold will have sold label
-	a. I added sold attribute to ITEM and made necessary changes on shoppingpage
+	a. I added sold attribute to ITEM 
+	b. Added a "sold" label that now shows up on sold items in store and itempage
 12. Seller page shows what items they are selling
+	a. On profile page (unformatted currently)
 13. EditItem page is mostly done. 
+	a. Users can edit their items and set them as sold
+14. Checkout page made with no functionality.
+15. Setup the logout feature (destroy session variables, etc.)
+
 
 NOTES/STEPS of what to do NEXT
 .
-1. Documentation. One of us needs to go back and better comment each page
-2. CSS. Lots of styling left to do. 
-3. Bug checking. We should create more test users and see if we see errors.
-4. Create a new table with item id's and image links. This will allow for an item to have multiple images
-5. Categories
-	a. Item's shouldn't show up twice if in two categories
-6. Fix Kevin link to pictures to redirect to Nate's imgs folder in shoppingPage.php
-7. Format "currently selling" on profile.php
-8. Item page should have "buy item" page that takes them to another page with fake "checkout" form
-	a. When "checkout" form is submitted, item is edited in DB to have sold == 1 (true)
-		and buyerEmail == email of person who bought it
-	b. Also add if sold or not to item page 
+1. Decide if items should be able to have multiple images
+2. "Narrow your Search" ->Categories
+	a. Item's shouldn't show up twice if in two categories. Still can't figure this out.
+3. Format "currently selling" on profile.php
+4. When "checkout" form is submitted, item is edited in DB to have sold == 1 (true) and buyerEmail == email of person who bought it
+ 
 
 
 
