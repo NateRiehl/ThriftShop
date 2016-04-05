@@ -27,7 +27,7 @@ Recently Done:
 11. Only items that are not sold should show up. Items that are sold will have sold label
 	a. I added sold attribute to ITEM and made necessary changes on shoppingpage
 12. Seller page shows what items they are selling
-
+13. EditItem page is mostly done. 
 
 NOTES/STEPS of what to do NEXT
 .
@@ -39,12 +39,10 @@ NOTES/STEPS of what to do NEXT
 	a. Item's shouldn't show up twice if in two categories
 6. Fix Kevin link to pictures to redirect to Nate's imgs folder in shoppingPage.php
 7. Format "currently selling" on profile.php
-8. Seller should be able to edit items they are selling 
-	a. Itempage has button "edit item" that should go to new page with form that updates database
-		aa. Seller can update details of item or mark item as sold and say who bought it
-9. Item page should have "buy item" page that takes them to another page with fake "checkout" form
+8. Item page should have "buy item" page that takes them to another page with fake "checkout" form
 	a. When "checkout" form is submitted, item is edited in DB to have sold == 1 (true)
 		and buyerEmail == email of person who bought it
+	b. Also add if sold or not to item page 
 
 
 

@@ -1,0 +1,41 @@
+body{
+	background-color: #005696;
+}
+
+h1{
+	padding-top: 50px;
+	text-align: center; 
+	width: 800px;
+	color: white;
+}
+
+input[type=submit] {
+    background-color: orange;
+    border: none;
+    width: 325px;
+	height: 50px;
+	font-size: 15px;
+    cursor: pointer;
+
+}
+input[type=text] {
+    border: none;
+    font-size: 15px;
+    height: 40px;
+    width: 325px;
+}
+
+input[type=password] {
+    border: none;
+    font-size: 15px;
+    height: 40px;
+    width: 325px;
+}
+td{
+	color: white;
+	margin-bottom: 10px;
+}
+
+form{
+	margin-top:50px;
+}

@@ -8,6 +8,7 @@
 	$row = $result->fetch();
 	$itemName = $row['name'];
 	$isSold = $row['sold'];
+	$buyerEmail = $row['buyerEmail'];
 ?>
 <HTML>
 	<HEAD>
@@ -20,9 +21,7 @@
 	
 		<form name='fmEdit' method = 'POST' action = 'edit_item.php'>
 		<table cellpadding="0" cellspacing="5">
-		<tr>
- 		<td><input type='text' name='itemID' id='itemID' value='<?php echo($itemID);?>' readonly/> </td>
-		</tr>
+
 		<tr>
  		<td><input type='text' name='name' id='name' placeholder='<?php echo($itemName);?>'/> </td>
 		</tr>
@@ -37,8 +36,15 @@
 					<?php if($row['sold'] == 1){echo('checked');} ?>/>
 				  No<input type='radio' name ='sold' id='no' value='No'
 					<?php if($row['sold'] == 0){echo('checked');} ?>/>
-			 </td>
+		</td>
 	</tr>
+	<tr>
+ 		<td><input type='text' name='buyerEmail' id='buyerEmail' placeholder='<?php if(is_null($buyerEmail)) echo('Buyer Email');
+					else echo($buyerEmail);?>'/>
+		</td>
+	</tr>
+
+ 		<input type='hidden' name='itemID' value='<?php echo($itemID);?>'/>
 		<?php echo("<input type='hidden' name='email' value='$email'>");?>
 	</table>
 	<input type='submit' value='Submit Item Edit!'>

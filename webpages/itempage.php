@@ -49,6 +49,8 @@
 		$date = $row['date'];
 		$descript=$row['description'];
 		$sellerEmail=$row['sellerEmail']; 
+		$buyerEmail = $row['buyerEmail'];
+
 		printf("<h1> %s </h1>", $name);	
 		printf("<h2>Price: $%s </h2>", $price);
 		printf("<h2>Description: </h2>");
@@ -59,14 +61,22 @@
 		else{
 			echo("<h3>Seller: Me</h3>");
 		}
+		
+		if($sold == 1 && !is_null($buyerEmail)){
+			printf("<p>Buyer: %s </p>", $buyerEmail);		
+		}
+
 		printf("<form method='post' action='profile.php' id='email'><input type='hidden' name='sellerEmail' value=%s> </form>", $sellerEmail);
 		printf("<form method='post' action='edititem.php' id='edititem'><input type='hidden' name='itemID' value=%s> </form>", $id);
+		printf("<form method='post' action='checkout.php' id='checkout'><input type='hidden' name='itemID' value=%s> </form>", $id);
 		if($sellerEmail == $userEmail){
 			printf("<button type='submit' form='email'>Go to my page</button>");
 			printf("<button type='submit' form='edititem'>Edit my item</button>");
 		}
 		else{
 			printf("<button type='submit' form='email'>Go to Seller's page</button>");
+		//Possibly make this button styled differently??
+			printf("<button type='submit' form='checkout'>Buy Item</button>");
 		}
 	?>	
 	</DIV> 
