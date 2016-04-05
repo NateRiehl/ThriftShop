@@ -42,9 +42,11 @@ NOTES/STEPS of what to do NEXT
 8. Seller should be able to edit items they are selling 
 	a. Itempage has button "edit item" that should go to new page with form that updates database
 		aa. Seller can update details of item or mark item as sold and say who bought it
+	b. Fill out edit item page with form
 9. Item page should have "buy item" page that takes them to another page with fake "checkout" form
 	a. When "checkout" form is submitted, item is edited in DB to have sold == 1 (true)
 		and buyerEmail == email of person who bought it
+	b. Also add if sold or not to item page 
 
 
 
