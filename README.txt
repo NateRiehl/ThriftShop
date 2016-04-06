@@ -40,13 +40,13 @@ Recently Done:
 15. Setup the logout feature (destroy session variables, etc.)
 16. "Narrow your Search" ->Categories
 	a. Item's don't show up twice if in two categories
+17. Checkout now has functionality. Does not do anything with credit card info however.
 
 NOTES/STEPS of what to do NEXT
 .
 1. Decide if items should be able to have multiple images
 2. Format "currently selling" on profile.php
-3. When "checkout" form is submitted, item is edited in DB to have sold == 1 (true) and buyerEmail == email of person who bought it
-4. More CSS todo
+3. More CSS todo
  
 
 

@@ -1,5 +1,4 @@
 body{
-
 }
 
 .top {
@@ -34,7 +33,7 @@ li a:hover {
 
 .imgBackground{
 	position: absolute;
-	right: 70%;
+	left: 70%;
 	background-color: #005696;
 }
 
@@ -45,7 +44,7 @@ li a:hover {
     height: auto;
 }
 
-.itemImg .sold img{
+.sold img{
 	position: absolute;
 	top: 10%;
 	left: 2%;

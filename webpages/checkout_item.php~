@@ -8,12 +8,12 @@ $query = "Update ITEM SET sold='1' Where id='$itemID'";
 $result = $db->query($query);
 
 if($buyerEmail != NULL){
-	$query = "Update ITEM SET buyerEmail='$buyerEmail' Where id='$itemID'";
-	$result = $db->query($query);
+$query = "Update ITEM SET buyerEmail='$buyerEmail' Where id='$itemID'";
+$result = $db->query($query);
 }
 
 if($result == false){
-	echo("messed up");
+echo("messed up");
 }
 
 echo("You bought item!");
