@@ -38,15 +38,15 @@ Recently Done:
 	a. Users can edit their items and set them as sold
 14. Checkout page made with no functionality.
 15. Setup the logout feature (destroy session variables, etc.)
-
+16. "Narrow your Search" ->Categories
+	a. Item's don't show up twice if in two categories
 
 NOTES/STEPS of what to do NEXT
 .
 1. Decide if items should be able to have multiple images
-2. "Narrow your Search" ->Categories
-	a. Item's shouldn't show up twice if in two categories. Still can't figure this out.
-3. Format "currently selling" on profile.php
-4. When "checkout" form is submitted, item is edited in DB to have sold == 1 (true) and buyerEmail == email of person who bought it
+2. Format "currently selling" on profile.php
+3. When "checkout" form is submitted, item is edited in DB to have sold == 1 (true) and buyerEmail == email of person who bought it
+4. More CSS todo
  
 
 

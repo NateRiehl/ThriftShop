@@ -145,18 +145,22 @@ echo('</DIV>');
 	<DIV class='selling'>
 		<?php
 			if($userspage){
-				echo("<h1>My Current items in marketplace:</h1>");
+				echo("<h1>My Current Items in Marketplace:</h1>");
 			}
 			else{
-				echo("<h1>Current items in marketplace:</h1>");
+				echo("<h1>Current Items in Marketplace:</h1>");
 			}
 			$query = "select * from ITEM JOIN USER ON email=sellerEmail WHERE email='$email'";
 			$result = $db->query($query);
 			if($result != false){
 				while($row = $result->fetch()){
-				$name=$row['name'];
-				$price=$row['price'];
-				echo("$name $price <br>");
+				echo("<DIV class='item'>");
+					$name=$row['name'];
+					$price=$row['price'];
+					$id=$row['id'];
+					printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value='%s'> </form>", $id, $id);
+					printf("<button type='submit' form='%s'>%s. Price: $%s</button> &nbsp;",$id,$name,$price);
+				echo("</DIV>");
 				}
 			}
 		?>

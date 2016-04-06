@@ -262,4 +262,10 @@ text-align: center;
 	left: 60%;
 	width: 40%;
 }
+.item{
+	position: relative;	
+	border: solid;
+	width: 50%;
+	margin-bottom: 1%;
 
+}
