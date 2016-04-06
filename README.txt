@@ -5,7 +5,9 @@ UPDATED 3/06/16 with new goals
 UPDATED 3/07/16. Edited.
 UPDATED 3/10/16 CATEGORY table added and shoppingpage changes
 UPDATED 3/26/16 Reviews 
-UPDATED 4/04/16 Currently selling, addreview, add_review
+UPDATED 4/02/16 Currently selling, addreview, add_review
+UPDATED 4/04/16 edititem, edit_item, checkout
+UPDATED 4/05/16 categories, item functionality, checkout functionality
 
 Recently Done:
 1. Created "profile.php". This is the user's personal page.
@@ -36,11 +38,11 @@ Recently Done:
 	a. On profile page (unformatted currently)
 13. EditItem page is mostly done. 
 	a. Users can edit their items and set them as sold
-14. Checkout page made with no functionality.
+14. Checkout page 
+	a. Items can be "bought" and it is said to sold
 15. Setup the logout feature (destroy session variables, etc.)
 16. "Narrow your Search" ->Categories
-	a. Item's don't show up twice if in two categories
-17. Checkout now has functionality. Does not do anything with credit card info however.
+	a. Item's don't show up twice if in two categories.
 
 NOTES/STEPS of what to do NEXT
 .
