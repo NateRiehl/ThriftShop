@@ -153,14 +153,17 @@ echo('</DIV>');
 			$query = "select * from ITEM JOIN USER ON email=sellerEmail WHERE email='$email'";
 			$result = $db->query($query);
 			if($result != false){
-				while($row = $result->fetch()){
-				echo("<DIV class='item'>");
+				while($row = $result->fetch()){		
 					$name=$row['name'];
 					$price=$row['price'];
 					$id=$row['id'];
-					printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value='%s'> </form>", $id, $id);
-					printf("<button type='submit' form='%s'>%s. Price: $%s</button> &nbsp;",$id,$name,$price);
-				echo("</DIV>");
+					$sold = $row['sold'];
+					if($sold == 0){
+						echo("<DIV class='item'>");
+						printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value='%s'> </form>", $id, $id);
+						printf("<button type='submit' form='%s'>%s. Price: $%s</button> &nbsp;",$id,$name,$price);
+						echo("</DIV>");
+					}
 				}
 			}
 		?>
