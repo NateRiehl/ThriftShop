@@ -12,11 +12,13 @@
 			
 		<h2> Join a Thriving Community of Students and Professors Searching for High Quality, Low Price Items!</h2>
 <div align=center class = "login">
+	<table>
 	<form form name='fmLogin' method='POST' action='login.php'>
   	<input type="text" name="email" placeholder = "Enter Email">
   	<input type="password" name="password" placeholder="Enter Password"> <br>
   	<input type="submit" value="Login">
 	</form>
+	</table>
 </div>
 		<br>
 		<p><button type="submit" class = "button" onclick="location.href='register.php';">New user? Register</button></p>

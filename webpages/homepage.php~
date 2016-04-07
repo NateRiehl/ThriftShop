@@ -1,3 +1,4 @@
+<!-- Homepage of website -->
 <HTML>	
 	<head> 
 		<title> Thrift Shop</title>
@@ -8,8 +9,7 @@
 		<h1>KNowledge<br>
 			Gettysburg Community Thrift Shop </h1>
 		<br>
-		
-		
+			
 		<h2> Join a Thriving Community of Students and Professors Searching for High Quality, Low Price Items!</h2>
 <div align=center class = "login">
 	<form form name='fmLogin' method='POST' action='login.php'>

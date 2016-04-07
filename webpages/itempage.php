@@ -15,13 +15,13 @@
 <body>
 <div class ="imgBackground"> </div>
 
-<div class = "top">
-<ul>
-  <li><a href="profile.php">My page</a></li>
-  <li><a href="shoppingPage.php">Shopping Page</a></li>
-</ul>
-</div>
-	
+	<div class = "top">
+		<ul>
+	 	 <li><a href="profile.php">My page</a></li>
+ 		 <li><a href="shoppingPage.php">Shopping Page</a></li>
+		</ul>
+	</div>
+<DIV class='full'>
 	<DIV class = "itemImg">
 	<?php	//get item's image
 		$query = "SELECT imageLink,sold FROM ITEM WHERE id= '$id'";
@@ -53,38 +53,37 @@
 
 		printf("<h1> %s </h1>", $name);	
 		printf("<h2>Price: $%s </h2>", $price);
-		printf("<h2>Description: </h2>");
-		printf("<p> %s </br></br> Date Posted: %s </p>", $descript, $date);
+		printf("<h2>Item Description: </h2>");
+		printf("<p> %s </p>", $descript);
 		if($sellerEmail != $userEmail){
-			printf("<h3> Seller: %s <h3>", $sellerEmail);
+			printf("<div class='emailContainer'><h3> Seller:</h3> <p>%s </p></div>", $sellerEmail);
 		}
 		else{
 			echo("<h3>Seller: Me</h3>");
 		}
 		
 		if($sold == 1 && !is_null($buyerEmail)){
-			printf("<p>Buyer: %s </p>", $buyerEmail);		
+			printf("<div class='emailContainer'><h3>Buyer:</h3><p> %s </p></div>", $buyerEmail);		
 		}
 
 		printf("<form method='post' action='profile.php' id='email'><input type='hidden' name='sellerEmail' value=%s> </form>", $sellerEmail);
 		printf("<form method='post' action='edititem.php' id='edititem'><input type='hidden' name='itemID' value=%s> </form>", $id);
 		printf("<form method='post' action='checkout.php' id='checkout'><input type='hidden' name='itemID' value=%s> </form>", $id);
-		if($sellerEmail == $userEmail){
+			if($sellerEmail == $userEmail){
 			printf("<button type='submit' form='email'>Go to my page</button>");
 			printf("<button type='submit' form='edititem'>Edit my item</button>");
-		}
-		else{
-			printf("<button type='submit' form='email'>Go to Seller's page</button>");
-		//Possibly make this button styled differently??
-			if($sold == 0){
-			printf("<button type='submit' form='checkout'>Buy Item</button>");
 			}
-		}
+			else{
+			printf("<button type='submit' form='email'>Go to Seller's page</button>");
+				//Possibly make this button styled differently??		
+				if($sold == 0){
+					printf("<button type='submit' form='checkout'>Buy Item</button>");
+				}
+			}
+			printf("<div class='emailContainer'><h3>Date Listed: </h3><p>%s </p></div>", $date);
 	?>	
 	</DIV> 
-
+</DIV>
 </body>
-
-
 
 </html>

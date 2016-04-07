@@ -59,14 +59,14 @@
 	
 	
 	if($userspage == true){
-	echo("<table>");
+	echo("<div class = 'picButtons'><table>");
 		echo("<form method='post' action='profile.php' enctype='multipart/form-data'>");
-    		echo("<input type='file' id='propic' name='propic'> &nbsp;");
-		echo("<label for='propic'>Choose Profile Pic</label>"); 
+    		echo("<input type='file' id='propic' name='propic'>");
+		echo("<label for='propic'>Choose Picture</label>"); 
     		echo("<input type='submit' id='submitProPic' name='submitProPic'>");
-		echo("<label for='submitProPic'>Upload Profile Pic</label>"); 
+		echo("<label for='submitProPic'>Upload Picture</label>"); 
 		echo("</form>");
-	echo("</table>");
+	echo("</table></div>");
 	}
 	echo("</DIV>");
 	 ?>
@@ -84,6 +84,7 @@
 	</DIV>
 </DIV> 
 <DIV class = "bottomhalf">
+<DIV class="bioreview">
 	<DIV class = "bio">
 <?php
 		if($userspage == true){
@@ -96,17 +97,17 @@
 			echo("<button type='submit'  onclick='showForm()' id='editbio'> Edit Bio </button>");	
 		}
 		else{
-			printf("<h1> About %s: </h1>", $row['Fname']);			
+			printf("<h2> About %s: </h2>", $row['Fname']);			
 		}
 
-echo('</DIV>');
 		$query = "SELECT bio FROM USER WHERE email = '$email'";
 		$result = $db->query($query);
 		$row = $result->fetch(); 
 		$bio=$row['bio'];
 		echo("<DIV class='bioInfo' id='bioInfo' align='left'>");
-		printf(" %s ", $bio);
+		printf("<p> %s </p>", $bio);
 		echo("</DIV>");
+	echo('</DIV>');
 	
 ?>	
 
@@ -141,7 +142,7 @@ echo('</DIV>');
 	}
 ?>
 </DIV>
-
+</DIV>
 	<DIV class='selling'>
 		<?php
 			if($userspage){
@@ -150,20 +151,27 @@ echo('</DIV>');
 			else{
 				echo("<h1>Current Items in Marketplace:</h1>");
 			}
-			$query = "select * from ITEM JOIN USER ON email=sellerEmail WHERE email='$email'";
+			$query = "select i.imageLink, name, price, id, sold from ITEM AS i JOIN USER AS u ON email=sellerEmail WHERE email='$email'";
 			$result = $db->query($query);
+			$count = 0;
 			if($result != false){
 				while($row = $result->fetch()){		
 					$name=$row['name'];
 					$price=$row['price'];
 					$id=$row['id'];
 					$sold = $row['sold'];
+					$imageLink=$row['imageLink'];
 					if($sold == 0){
+						$count++;
 						echo("<DIV class='item'>");
 						printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value='%s'> </form>", $id, $id);
-						printf("<button type='submit' form='%s'>%s. Price: $%s</button> &nbsp;",$id,$name,$price);
+						printf("<button type='submit' form='%s'>Item: %s. Price: $%s</button> &nbsp;",$id,$name,$price);
+						printf("<img src='$imageLink'>");
 						echo("</DIV>");
 					}
+				}
+				if($count == 0){
+					echo("No unsold items to display");				
 				}
 			}
 		?>

@@ -11,6 +11,7 @@ background-color: orange;
   right: 0;
   bottom: 0;
   height: 100%;
+  overflow: auto;
   padding:0px;
   margin: 0px;
   background-color: orange;
@@ -60,72 +61,6 @@ li a {
 li a:hover {
 	color: orange;
 }
- .bio {
-    position:relative;
-    top: 5%;
-    left: 7%;
-    width: 60%;
-    height: 20%;
-    text-align: left;
-
-}
-.bio h1{
-	float: left;
-}
-.bioInfo{
-	position: relative;
-	left: 7%;
-	width: 80%;
-	height: 20%;
-	text-align: left;
-}
-
-.bio form{
-	display: none;	
-}
-input[type=submit] {
-    position: relative;
-    left: 47%;
-    border: none;
-    font-size: 80%;
-    width: 10%;
-    background-color:#005696;
-    color: white; 
-}
-input[type=submit]:hover {
-    border: solid;
-    border-color: orange;
-    cursor: pointer;
-}
-
-#newbio{
-	display: none;
-	position: relative;
-	top: -15%;
-	height: 100%;
-	width: 50%;
-	left: 7%;
-}
-
-
-
-.bio button{
-    position: relative;
-    margin-top: 2.5%;
-    margin-left: 1%;
-    background-color: #005696;
-    border: none;
-    color: white;
-    padding: 10px 30px 10px 30px;
-    font-size: 80%;
-
-}
-.bio button:hover{
-	border: solid;
-	border-color: white;
-	cursor: pointer;
-}
-
 .profilepic{
     position:absolute;
     left:2%; top:10%; bottom: 0;
@@ -135,25 +70,22 @@ input[type=submit]:hover {
     /*background-color: orange;*/
 
 }
-
+.picButtons{
+	margin-top: 5%;
+}
 #propic{
 	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	margin-bottom: 5px;
 }
 
 #propic + label {
+	text-align:center;
 	border: none;
 	background-color:orange;
-	padding: 5 10 5 10;
-	margin-bottom: 1px;
-	font-size: 15px;
  	color: white;
 	position: absolute;
 	width:50%;
 	top: 68%;
-	left: 22%;
+	left: 26%;
 }
 
 #propic + label:hover {
@@ -164,20 +96,18 @@ input[type=submit]:hover {
 
 #submitProPic{
 	opacity: 0;
-	overflow: hidden;
-	position: absolute;
 }
 
 #submitProPic + label {
+	text-align:center;
 	border: none;
 	background-color:orange;
-	padding: 5 10 5 10;
  	color: white;
 	font-size: 15px;
 	position: absolute;
 	width: 50%;
-	top: 80%;
-	left: 22%;
+	top: 77%;
+	left: 26%;
 }
 
 #submitProPic + label:hover {
@@ -222,13 +152,78 @@ text-align: center;
 	border-color: #005696;
 	cursor: pointer;
 }
+.bioreview{
+	position: absolute;
+	height: 100%;
+	width: 50%;
+}
+ .bio {
+    position:relative;
+    top: 5%;
+    left: 7%;
+    width: 100%;
+    text-align: left;
+
+}
+.bio h1{
+	float: left;
+}
+.bioInfo{
+	position: absolute;
+	
+}
+
+.bio form{
+	display: none;	
+}
+input[type=submit] {
+    position: relative;
+    left: 47%;
+    border: none;
+    font-size: 80%;
+    width: 10%;
+    background-color:#005696;
+    color: white; 
+}
+input[type=submit]:hover {
+    border: solid;
+    border-color: orange;
+    cursor: pointer;
+}
+
+#newbio{
+	display: none;
+	width: 100%;
+	left: 7%;
+}
+
+
+
+.bio button{
+    position: relative;
+    margin-top: 3.5%;
+    margin-left: 1%;
+    background-color: #005696;
+    border: none;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    font-size: 80%;
+
+}
+.bio button:hover{
+	border: solid;
+	border-color: orange;
+	cursor: pointer;
+}
 
 
 .reviews{
-    position:relative;
+    position: relative;
+    top: 15%;
     left: 7%;
-    width: 60%;
+    width: 100%;
 }
+
 .reviews button{
 	position: relative;
 	border: none;	
@@ -261,4 +256,32 @@ text-align: center;
 	left: 60%;
 	width: 40%;
 }
+.item{
+	position: relative;	
+	border: solid;
+	width: 80%;
+	padding: 5% 0 5% 0;
+	margin-bottom: 1%;
+}
+.item button{
+	position: absolute;
+	top: 0;
+	width: 60%;
+	height: 100%;
+	background-color:#005696;
+	color: white;
+	border: none;
+}
 
+.item button:hover{
+	border: solid;
+	border-color: orange;
+	cursor: pointer;
+}
+.item img{
+	position: absolute;
+	top: 0;
+	left: 60%;
+	width: 40%;
+	height: 100%;
+}
