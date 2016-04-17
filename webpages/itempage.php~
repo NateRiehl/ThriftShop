@@ -80,7 +80,7 @@
 					printf("<button type='submit' form='checkout'>Buy Item</button>");
 				}
 			}
-			printf("<p>Date Listed: %s </p>", $date);
+			printf("<div class='emailContainer'><h3>Date Listed: </h3><p>%s </p></div>", $date);
 	?>	
 	</DIV> 
 </DIV>

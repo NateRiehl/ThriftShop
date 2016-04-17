@@ -6,6 +6,7 @@ $Fname= $_POST['Fname'];
 $Lname=$_POST['Lname'];
 $email=$_POST['email'];
 $password =$_POST['password'];
+$password = md5($password);
 
 $query = "SELECT* FROM USER WHERE email = '$email'";//Test query to make sure email is unique
 $result = $db->query($query);
@@ -15,7 +16,7 @@ if($result->rowCount() != 0){ //Error msg. Email address in use.
 }
 else{
 $_SESSION['email'] = $email; //Set session variable (Essential for rest of website)
-// imgs/propic is the default profile picture
+// imgs/propic is the default profile picture for users
 // "Edit your bio[..]" is the default bio for users
 $query = "INSERT INTO USER VALUES('$Fname', '$Lname', '$email', '$password', 'imgs/propic.png' , 'Edit your bio to place information here')"; 
 $result = $db ->query($query);

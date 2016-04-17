@@ -25,6 +25,9 @@ include_once('dbproj_connect.php');
 		<td>
 		<input type="checkbox" name="category[]" value="Menswear">Menswear<br />
 		<input type="checkbox" name="category[]" value="Womenswear">Womens Clothing<br />
+		<input type="checkbox" name="category[]" value="Tops">Tops <br />
+		<input type="checkbox" name="category[]" value="Pants">Pants <br />
+		<input type="checkbox" name="category[]" value="Shoes">Shoes <br />
 		<input type="checkbox" name="category[]" value="SportsApparel">Sports Apparel<br />
 		<input type="checkbox" name="category[]" value="Other">Other
 		</td>

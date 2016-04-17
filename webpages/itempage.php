@@ -17,8 +17,8 @@
 
 	<div class = "top">
 		<ul>
-	 	 <li><a href="profile.php">My page</a></li>
  		 <li><a href="shoppingPage.php">Shopping Page</a></li>
+		<li><a href="profile.php">My page</a></li>
 		</ul>
 	</div>
 <DIV class='full'>

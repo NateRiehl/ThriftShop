@@ -2,14 +2,14 @@
 /**
 * This page sets up the profile for a user
 */
-	//phpinfo();
-	include_once('dbproj_connect.php');
-	include_once('fileutils.php');
+	
+	include_once('dbproj_connect.php'); //For connecting to database
+	include_once('fileutils.php'); //Utility functions for saving pictures
 	session_start();
 	if(!isset($_SESSION['email'])){ //Make sure user is logged in..Otherwise, send them to login page
 		header('Location: http://www.cs.gettysburg.edu/~riehna01/cs360/webpages/homepage.php');
 	}
-	$email = $_SESSION['email'];
+	$email = $_SESSION['email']; //Get their session var
 	$userspage = false; //This is a boolean flag to check if user is on their own page
 	if(isset($_POST['sellerEmail'])){
 		if($_POST['sellerEmail'] == $email){
@@ -41,13 +41,13 @@
 	<DIV class = "bod">
 	
 	<DIV class = "tophalf"> 
-	<div class = "linkpanel">
+	<DIV class = "linkpanel">
 		<ul>
   			<li><a href="shoppingPage.php">Shopping Page</a></li>
   			<li><a href="logout.php">Log Out</a></li>
 
 		</ul>
-	</div>
+	</DIV>
 	<DIV class = "profilepic">
 <?php		//Get their profile picture
 		$query = "SELECT imageLink FROM USER WHERE email = '$email'";
@@ -58,35 +58,35 @@
 	
 	
 	
-	if($userspage == true){
-	echo("<div class = 'picButtons'><table>");
-		echo("<form method='post' action='profile.php' enctype='multipart/form-data'>");
-    		echo("<input type='file' id='propic' name='propic'>");
-		echo("<label for='propic'>Choose Picture</label>"); 
-    		echo("<input type='submit' id='submitProPic' name='submitProPic'>");
-		echo("<label for='submitProPic'>Upload Picture</label>"); 
-		echo("</form>");
-	echo("</table></div>");
-	}
-	echo("</DIV>");
+		if($userspage == true){
+			echo("<div class = 'picButtons'><table>");
+			echo("<form method='post' action='profile.php' enctype='multipart/form-data'>");
+    			echo("<input type='file' id='propic' name='propic'>");
+			echo("<label for='propic'>Choose Picture</label>"); 
+    			echo("<input type='submit' id='submitProPic' name='submitProPic'>");
+			echo("<label for='submitProPic'>Upload Picture</label>"); 
+			echo("</form>");
+			echo("</table></div>");
+		}
 	 ?>
-	<DIV class = "name">
+	</DIV> <!--End of profilepic div-->
+	<DIV class = "name"> <!--This div show/styles the page owner's name-->
 	<?php
 		$query = "Select Fname, Lname FROM USER WHERE email = '$email'";
 		$result = $db->query($query);
 		$row = $result->fetch(); 
 		$name = $row['Fname'] . " " . $row['Lname'];
 		printf(" %s ", $name);
-		if($userspage == true){
+		if($userspage == true){ //Only can add items if they are on their own page
 			echo("<button type='submit'  id='addItem' onclick=location.href='additem.php';> Add Item </button>");
 		}
-?>
+	?>
 	</DIV>
-</DIV> 
+</DIV> <!--End of top half of profile.php-->
 <DIV class = "bottomhalf">
 <DIV class="bioreview">
 	<DIV class = "bio">
-<?php
+	<?php
 		if($userspage == true){
 			echo("<h1> About Me: </h1>");
 			echo("<form method='post' action='profile.php' id ='bioForm'>");
@@ -106,43 +106,42 @@
 		$bio=$row['bio'];
 		echo("<DIV class='bioInfo' id='bioInfo' align='left'>");
 		printf("<p> %s </p>", $bio);
-		echo("</DIV>");
-	echo('</DIV>');
-	
-?>	
+		echo("</DIV>");		
+	?> 
+	</DIV><!--End of bio section-->	
 
-<DIV class = "reviews">
-<?php
+	<DIV class = "reviews">
+	<?php
 	$query = "SELECT * FROM REVIEW JOIN USER ON sellerEmail = email WHERE email='$email'";
 	$result = $db -> query($query);
 
-	if($userspage){
-		echo("<h1> My Reviews: </h1>");
-	}
-	else{ //Let them add a review if this isn't their own page
-		printf("<h1> Reviews for %s: </h1>", $name);
-		printf("<form method='post' action='addreview.php' id='addreview'><input type='hidden' name='email' value=%s> </form>", $email);
-		echo("<button type='submit'  form='addreview'> Add Review </button>");
-	}
-	while($row = $result->fetch()){ //Get each review of this user
-		printf("<DIV class=review>");
-		$title = $row['title'];
-		$numGrade= $row['numGrade'];
-		$item= $row['item'];
-		$comment= $row['comment'];
-		printf("<h2>%s</h2>", $title);
-		$count = 0;
-		while($count < $numGrade){ //Print stars
-			printf("<img src='imgs/star.png' style='width:20px;height: 18px;position:relative; top: 5%%; float: left;'>");
-			$count++;	
+		if($userspage){
+			echo("<h1> My Reviews: </h1>");
 		}
-		printf("<p>Item bought: %s</p>", $item);
-		printf(" %s ", $comment);
-		echo("</DIV>");
-	}
-?>
-</DIV>
-</DIV>
+		else{ //Let them add a review if this isn't their own page
+			printf("<h1> Reviews for %s: </h1>", $name);
+			printf("<form method='post' action='addreview.php' id='addreview'><input type='hidden' name='email' value=%s> </form>", $email);
+			echo("<button type='submit'  form='addreview'> Add Review </button>");
+		}
+		while($row = $result->fetch()){ //Get each review of this user
+			printf("<DIV class=review>");
+			$title = $row['title'];
+			$numGrade= $row['numGrade'];
+			$item= $row['item'];
+			$comment= $row['comment'];
+			printf("<h2>%s</h2>", $title);
+			$count = 0;
+			while($count < $numGrade){ //Print stars
+				printf("<img src='imgs/star.png' style='width:20px;height: 18px;position:relative; top: 5%%; float: left;'>");
+				$count++;	
+			}
+			printf("<p>Item bought: %s</p>", $item);
+			printf(" %s ", $comment);
+			echo("</DIV>");
+		}
+	?>
+	</DIV> <!--End of review section-->
+</DIV> <!--End of 'bioreview' AKA left side of bottom half of page-->
 	<DIV class='selling'>
 		<?php
 			if($userspage){
@@ -175,11 +174,17 @@
 				}
 			}
 		?>
-	</DIV>
+	</DIV> <!--End of 'currently selling'-->
+</DIV> <!--End bottom half-->
+</DIV> <!--End body -->
+</BODY>
+</HTML>
 <?php
+//Check if new profile or bio have been submitted
 	//submitted a new propic
 	if(!empty($_POST["submitProPic"])){
-			saveProPic($_FILES['propic']); //util method in "fileutils.php" that updates their propic
+		saveProPic($_FILES['propic']); //util method in "fileutils.php" that updates their propic
+		header("Refresh:0");	
 	}
 	//submitted a new bio
 	if(!empty($_POST["submitBio"])){
@@ -190,8 +195,7 @@
 		header("Refresh:0");
 	}
 ?>
-</DIV>
-</DIV>
-</BODY>
-</HTML>
+
+
+
 

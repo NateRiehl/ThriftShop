@@ -6,6 +6,7 @@ $Fname= $_POST['Fname'];
 $Lname=$_POST['Lname'];
 $email=$_POST['email'];
 $password =$_POST['password'];
+$password = md5($password); //Hash password so not stored in plain text
 
 $query = "SELECT* FROM USER WHERE email = '$email'";//Test query to make sure email is unique
 $result = $db->query($query);

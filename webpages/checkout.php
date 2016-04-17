@@ -25,9 +25,8 @@
 		<form name='fmCheck' method = 'POST' action = 'checkout_item.php'>
 		<table cellpadding="0" cellspacing="5">
 
-		<tr> 
- 		<td>Buyer:</td> 
-		<td><input type='text' name='buyer' id='buyer' placeholder='<?php echo($email);?>' readonly/> </td>
+		<tr>
+		<td><input type='hidden' name='buyer' id='buyer' value='<?php echo($email);?>'> </td>
 		</tr>
 
 		<tr>

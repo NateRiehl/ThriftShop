@@ -27,7 +27,7 @@
 
 		<tr> 
  		<td>Buyer:</td> 
-		<td><input type='text' name='buyer' id='buyer' placeholder='<?php echo($email);?>' readonly/> </td>
+		<td><input type='hidden' name='buyer' id='buyer' value='<?php echo($email);?>'> </td>
 		</tr>
 
 		<tr>

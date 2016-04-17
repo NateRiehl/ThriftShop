@@ -1,4 +1,4 @@
-s<?php
+<?php
 /**
 * This php file is executed when a user tries to login
 */
@@ -6,6 +6,7 @@ include_once('dbproj_connect.php');
 session_start();
 $email=$_POST['email'];
 $password =$_POST['password'];
+$password = md5($password); //Hash the password to match database
 $_SESSION['email'] = $email;
 $query = "Select* from USER WHERE email='$email' AND password='$password'";
 $result = $db ->query($query);
