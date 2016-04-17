@@ -1,8 +1,35 @@
 body{
 	background-color: #005696;
-	text-align: center; 
+}
+.linkpanel{
+	position: absolute;
+	top:0;
+	left:0;right:0;
+	height: 5%;
+	background-color: orange;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #005696;
 }
 
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+	color: orange;
+}
 h1{
 	padding-top: 50px;
 	text-align: center; 

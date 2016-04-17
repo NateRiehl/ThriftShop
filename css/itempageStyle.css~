@@ -60,13 +60,14 @@ li a:hover {
 .emailContainer h3, .emailContainer p{
 	display:inline;
 }
-.description button {
+.description {
 	background-color:#005696;
 	border: none;
 	padding: 2% 5% 2% 5%;
     	color: white;
 	margin-right: 1%;
 	margin-bottom: 1%;
+	box-sizing: border-box;
 }
 .description button:hover{
 	border: solid;

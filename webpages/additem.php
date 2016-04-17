@@ -7,6 +7,13 @@ include_once('dbproj_connect.php');
 		<link rel="stylesheet" type="text/css" href="../css/registerStyle.css">
 	</head>
 <body> 
+<div class = "linkpanel">
+	<ul>
+ 		 <li><a href="shoppingPage.php">Shopping Page</a></li>
+		<li><a href="profile.php">My page</a></li>
+		<li><a href="logout.php">Log out</a></li>
+	</ul>
+</div>
 <div align=center>
 	<h1> Add an item to the Gettysburg Community Thrift </h1>
 </div>

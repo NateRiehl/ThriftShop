@@ -16,6 +16,13 @@
 		<link rel="stylesheet" type="text/css" href="../css/editItemStyle.css">
 	</HEAD>
 	<BODY>
+		<DIV class = "linkpanel">
+			<ul>
+  				<li><a href="shoppingPage.php">Shopping Page</a></li>
+				<li><a href="profile.php">My Page</a></li>
+  				<li><a href="logout.php">Log Out</a></li>
+			</ul>
+		</DIV>
 		<DIV align="center">
 		<h1>Edit Item <?php echo($itemName);?></h1>
 	

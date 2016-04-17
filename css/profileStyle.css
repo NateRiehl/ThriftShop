@@ -2,6 +2,7 @@
 padding:0px;
 margin: 0px;
 background-color: orange;
+
 }
 
 .bod{
@@ -15,6 +16,9 @@ background-color: orange;
   padding:0px;
   margin: 0px;
   background-color: orange;
+font-family: Helvetica, Times, serif;
+font-weight: lighter;
+
 }
 
 
@@ -156,6 +160,7 @@ li a:hover {
 	border: solid;
 	border-color: #005696;
 	cursor: pointer;
+	color: #005696;
 }
 .bioreview{
 	position: absolute;
@@ -175,7 +180,6 @@ li a:hover {
 }
 .bioInfo{
 	position: absolute;
-	
 }
 
 .bio form{
@@ -224,8 +228,8 @@ input[type=submit]:hover {
 
 
 .reviews{
-    position: relative;
-    top: 20%;
+    position: absolute;
+    top: 33%;
     left: 7%;
     width: 100%;
 }
@@ -283,6 +287,7 @@ input[type=submit]:hover {
 	border: solid;
 	border-color: orange;
 	cursor: pointer;
+	text-decoration: underline;
 }
 .item img{
 	position: absolute;

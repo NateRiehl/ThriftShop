@@ -1,4 +1,4 @@
-<?php
+f<?php
 	include_once('dbproj_connect.php');
 	$id = $_POST['itemID'];
 	session_start();
@@ -70,8 +70,8 @@
 		printf("<form method='post' action='edititem.php' id='edititem'><input type='hidden' name='itemID' value=%s> </form>", $id);
 		printf("<form method='post' action='checkout.php' id='checkout'><input type='hidden' name='itemID' value=%s> </form>", $id);
 			if($sellerEmail == $userEmail){
-			printf("<button type='submit' form='email'>Go to my page</button>");
-			printf("<button type='submit' form='edititem'>Edit my item</button>");
+			printf("<button type='submit' id='btnMyPage' form='email'>Go to my page</button>");
+			printf("<button type='submit' id='btnMyItem'form='edititem'>Edit my item</button>");
 			}
 			else{
 			printf("<button type='submit' form='email'>Go to Seller's page</button>");

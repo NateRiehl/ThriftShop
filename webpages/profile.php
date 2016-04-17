@@ -22,6 +22,11 @@
 	else{
 		$userspage = true;
 	}
+
+	//Query database for user's info
+	$query = "SELECT * from USER where email = '$email'";
+	$result = $db->query($query);
+	$row = $result->fetch();
 ?>
 <HTML>
 	<HEAD> 
@@ -38,7 +43,7 @@
 	</HEAD>
 <BODY>
 	
-	<DIV class = "bod">
+<DIV class = "bod">
 	
 	<DIV class = "tophalf"> 
 	<DIV class = "linkpanel">
@@ -50,9 +55,6 @@
 	</DIV>
 	<DIV class = "profilepic">
 <?php		//Get their profile picture
-		$query = "SELECT imageLink FROM USER WHERE email = '$email'";
-		$result = $db->query($query);
-		$row = $result->fetch(); 
 		$imageLink=$row['imageLink'];
 		printf("<img src='$imageLink'>");
 	
@@ -72,9 +74,6 @@
 	</DIV> <!--End of profilepic div-->
 	<DIV class = "name"> <!--This div show/styles the page owner's name-->
 	<?php
-		$query = "Select Fname, Lname FROM USER WHERE email = '$email'";
-		$result = $db->query($query);
-		$row = $result->fetch(); 
 		$name = $row['Fname'] . " " . $row['Lname'];
 		printf(" %s ", $name);
 		if($userspage == true){ //Only can add items if they are on their own page
@@ -87,23 +86,20 @@
 <DIV class="bioreview">
 	<DIV class = "bio">
 	<?php
+		//Get bio
+		$bio=$row['bio'];
 		if($userspage == true){
 			echo("<h1> About Me: </h1>");
 			echo("<form method='post' action='profile.php' id ='bioForm'>");
 			echo("<input type='submit' id='submitBio' name='submitBio' value='Submit Bio'></input>");
 			echo("</form>");
-			echo("<textarea rows='10' cols='100' form='bioForm' id='newbio' name='newbio' placeholder='Enter new bio information here'> </textarea>");
+			echo("<textarea rows='10' cols='100' form='bioForm' id='newbio' name='newbio' placeholder='Enter new bio information here'> '$bio'</textarea>");
 			
 			echo("<button type='submit'  onclick='showForm()' id='editbio'> Edit Bio </button>");	
 		}
 		else{
 			printf("<h2> About %s: </h2>", $row['Fname']);			
 		}
-
-		$query = "SELECT bio FROM USER WHERE email = '$email'";
-		$result = $db->query($query);
-		$row = $result->fetch(); 
-		$bio=$row['bio'];
 		echo("<DIV class='bioInfo' id='bioInfo' align='left'>");
 		printf("<p> %s </p>", $bio);
 		echo("</DIV>");		
@@ -112,6 +108,7 @@
 
 	<DIV class = "reviews">
 	<?php
+	//Get User's reviews
 	$query = "SELECT * FROM REVIEW JOIN USER ON sellerEmail = email WHERE email='$email'";
 	$result = $db -> query($query);
 
@@ -150,6 +147,7 @@
 			else{
 				echo("<h1>Current Items in Marketplace:</h1>");
 			}
+			//Get user's items in marketplace
 			$query = "select i.imageLink, name, price, id, sold from ITEM AS i JOIN USER AS u ON email=sellerEmail WHERE email='$email'";
 			$result = $db->query($query);
 			$count = 0;

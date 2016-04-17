@@ -120,7 +120,7 @@ printf("</div>");
 			</td>
 		</tr>
 		
-		<tr><td><h3 style="margin-top:5%; margin-bottom:1%;">Sort By: </h3></td></tr>
+		<tr><td><h3 align="center" style="margin-top:10%; margin-bottom:5%;">Sort By: </h3></td></tr>
 		<tr>
 			<td>
 				<input type="checkbox" name="sort[]" value="price">Price (Low) <br />

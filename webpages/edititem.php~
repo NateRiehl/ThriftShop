@@ -16,6 +16,12 @@
 		<link rel="stylesheet" type="text/css" href="../css/editItemStyle.css">
 	</HEAD>
 	<BODY>
+		<DIV class = "linkpanel">
+			<ul>
+  				<li><a href="shoppingPage.php">Shopping Page</a></li>
+  				<li><a href="logout.php">Log Out</a></li>
+			</ul>
+		</DIV>
 		<DIV align="center">
 		<h1>Edit Item <?php echo($itemName);?></h1>
 	
@@ -39,8 +45,8 @@
 		</td>
 	</tr>
 	<tr>
- 		<td><input type='text' name='buyerEmail' id='buyerEmail' placeholder='<?php if(is_null($buyerEmail))
-					echo('Buyer Email'); else echo($buyerEmail);?>'/>
+ 		<td><input type='text' name='buyerEmail' id='buyerEmail' placeholder='<?php if(is_null($buyerEmail)) echo('Buyer Email');
+					else echo($buyerEmail);?>'/>
 		</td>
 	</tr>
 
