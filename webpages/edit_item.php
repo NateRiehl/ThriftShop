@@ -5,8 +5,12 @@ include_once('dbproj_connect.php');
 $isDelete = $_POST['isDelete'];
 $itemID = $_POST['itemID'];
 if($isDelete == 'yes'){
+	echo($itemID."ID");
 	$query = "DELETE FROM ITEM WHERE id='$itemID'";
 	$result = $db->query($query);
+	if($result != false){
+		echo("\nSuccessful deletion");	
+	}
 }
 else{
 $name= $_POST['name'];

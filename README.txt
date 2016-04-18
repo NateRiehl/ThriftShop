@@ -54,6 +54,7 @@ NOTES/STEPS of what to do NEXT
 5. More sample data
 6. (Possible) Directory of Users w/ links to their pages.
 7. FAVORITES PAGE, add button to item page as well.
+8. Fix Foreign Key Constraint on Deletion. ItemID is the parent key to other tables so it is giving me an error upon trying to delete.
 
 
 
