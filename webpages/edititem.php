@@ -25,8 +25,8 @@
 		</DIV>
 		<DIV align="center">
 		<h1>Edit Item <?php echo($itemName);?></h1>
-	
-		<form name='fmEdit' method = 'POST' action = 'edit_item.php'>
+		
+		<form name='fmEdit' id='fmEdit' method = 'POST' action = 'edit_item.php'>
 		<table cellpadding="0" cellspacing="5">
 
 		<tr>
@@ -50,12 +50,27 @@
 					else echo($buyerEmail);?>'/>
 		</td>
 	</tr>
-
- 		<input type='hidden' name='itemID' value='<?php echo($itemID);?>'/>
+	
+	<!--Submitting Edit Item form with some information passed along. -->
+ 		<input type='hidden' name='itemID' value='<?php echo($itemID); ?>'/>
 		<?php echo("<input type='hidden' name='email' value='$email'>");?>
+		<input type='hidden' id='isDelete' name='isDelete' value='no'>
 	</table>
-	<input type='submit' value='Submit Item Edit!'>
+	<input type='submit' value='Submit Item Edit!'><br><br>
+	<input type='button' value='Delete Item' onclick="deleteItem()">
 	</form>
+
+
+	<script>
+	//Checks if the user wants to actually delete item. If yes, continues on to submit form.
+		function deleteItem(){
+			var confirm = window.confirm("Are you sure you want to delete item? Press OK to confirm deletion or Cancel to continue editing item.");
+			if(confirm == true){
+				document.getElementById('isDelete').value='yes';
+				document.getElementById("fmEdit").submit();
+			}
+		}
+	</script>
 	</DIV>
 	</BODY>
 </HTML>

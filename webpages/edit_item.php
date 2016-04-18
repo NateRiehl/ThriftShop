@@ -2,7 +2,13 @@
 
 include_once('dbproj_connect.php');
 
+$isDelete = $_POST['isDelete'];
 $itemID = $_POST['itemID'];
+if($isDelete == 'yes'){
+	$query = "DELETE FROM ITEM WHERE id='$itemID'";
+	$result = $db->query($query);
+}
+else{
 $name= $_POST['name'];
 $price=$_POST['price'];
 $description =$_POST['description'];
@@ -38,7 +44,7 @@ if(!empty($buyerEmail)){
 	$query = "Update ITEM set buyerEmail='$buyerEmail' Where id='$itemID'";
 	$result = $db->query($query);
 }
-
+}
 ?>
 
 Item Updated

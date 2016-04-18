@@ -5,7 +5,9 @@ UPDATED 3/06/16 with new goals
 UPDATED 3/07/16. Edited.
 UPDATED 3/10/16 CATEGORY table added and shoppingpage changes
 UPDATED 3/26/16 Reviews 
-UPDATED 4/04/16 Currently selling, addreview, add_review
+UPDATED 4/02/16 Currently selling, addreview, add_review
+UPDATED 4/04/16 edititem, edit_item, checkout
+UPDATED 4/05/16 categories, item functionality, checkout functionality
 
 Recently Done:
 1. Created "profile.php". This is the user's personal page.
@@ -41,13 +43,18 @@ Recently Done:
 15. Setup the logout feature (destroy session variables, etc.)
 16. "Narrow your Search" ->Categories
 	a. Item's don't show up twice if in two categories.
+17. Add delete button to edit item.
 
 NOTES/STEPS of what to do NEXT
 .
 1. Decide if items should be able to have multiple images
 2. Format "currently selling" on profile.php
 3. More CSS todo
- 
+4. Add delete button to edit item.
+5. Documentation
+6. More sample data
+7. (Possible) Directory of Users w/ links to their pages.
+8. FAVORITES PAGE, add button to item page as well.
 
 
 

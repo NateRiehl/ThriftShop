@@ -33,7 +33,7 @@ if(empty($_POST['submitCategory'])){ //User is looking at all items
 		$imageLink=$row['imageLink'];
 		$sold = $row['sold'];
 		printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>", $id, $id);
-		printf("<button type='submit' form='%s'><img src='$imageLink' class='itemimg'> </br>%s %s</button> &nbsp;",$id, $name, "$".$price);
+		printf("<button type='submit' form='%s'><img src='$imageLink' class='itemimg'> </br>%s $%.2f</button> &nbsp;",$id, $name, $price);
 		echo("<div class='sold'>");
 		if($sold == 1){
 			echo("<img src='imgs/sold.gif'>");

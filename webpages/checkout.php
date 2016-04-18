@@ -27,7 +27,7 @@
 	</div>
 		<DIV align="center">
 		<h1>Purchase: <?php echo($itemName);?></h1>
-		<h2>Price: $<?php echo($price);?></h2>
+		<h2>Price: $<?php printf("%.2f",$price);?></h2>
 		<form name='fmCheck' method = 'POST' action = 'checkout_item.php'>
 		<table cellpadding="0" cellspacing="5">
 

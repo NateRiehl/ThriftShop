@@ -43,13 +43,17 @@ Recently Done:
 15. Setup the logout feature (destroy session variables, etc.)
 16. "Narrow your Search" ->Categories
 	a. Item's don't show up twice if in two categories.
+17. Add delete button to edit item.
 
 NOTES/STEPS of what to do NEXT
 .
 1. Decide if items should be able to have multiple images
 2. Format "currently selling" on profile.php
 3. More CSS todo
- 
+4. Documentation
+5. More sample data
+6. (Possible) Directory of Users w/ links to their pages.
+7. FAVORITES PAGE, add button to item page as well.
 
 
 

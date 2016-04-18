@@ -98,7 +98,7 @@
 			echo("<button type='submit'  onclick='showForm()' id='editbio'> Edit Bio </button>");	
 		}
 		else{
-			printf("<h2> About %s: </h2> <hr>", $row['Fname']);			
+			printf("<h2> About %s: </h2>", $row['Fname']);			
 		}
 		echo("<DIV class='bioInfo' id='bioInfo' align='left'>");
 		printf("<hr><p> %s </p>", $bio);

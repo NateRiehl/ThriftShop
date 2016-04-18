@@ -52,7 +52,7 @@ f<?php
 		$buyerEmail = $row['buyerEmail'];
 
 		printf("<h1> %s </h1>", $name);	
-		printf("<h2>Price: $%s </h2>", $price);
+		printf("<h2>Price: $%.2f </h2>", $price);
 		printf("<h2>Item Description: </h2>");
 		printf("<p> %s </p>", $descript);
 		if($sellerEmail != $userEmail){

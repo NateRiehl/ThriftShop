@@ -163,7 +163,7 @@
 						$count++;
 						echo("<DIV class='item'>");
 						printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value='%s'> </form>", $id, $id);
-						printf("<button type='submit' form='%s'>Item: %s. Price: $%s</button> &nbsp;",$id,$name,$price);
+						printf("<button type='submit' form='%s'>Item: %s. Price: $%.2f</button> &nbsp;",$id,$name,$price);
 						printf("<img src='$imageLink'>");
 						echo("</DIV>");
 					}

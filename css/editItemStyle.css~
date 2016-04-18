@@ -46,6 +46,18 @@ input[type=submit] {
     cursor: pointer;
 
 }
+
+input[type=button] {
+    background-color: orange;
+    border: none;
+	margin-top: 40px;
+    width: auto;
+	height: 50px;
+	font-size: 15px;
+    cursor: pointer;
+
+}
+
 input[type=text] {
     border: none;
     font-size: 15px;
