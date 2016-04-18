@@ -6,6 +6,8 @@ $isDelete = $_POST['isDelete'];
 $itemID = $_POST['itemID'];
 if($isDelete == 'yes'){
 	echo($itemID."ID");
+	$query = "DELETE FROM CATEGORY WHERE itemID='$itemID'";
+	$result = $db->query($query);
 	$query = "DELETE FROM ITEM WHERE id='$itemID'";
 	$result = $db->query($query);
 	if($result != false){
