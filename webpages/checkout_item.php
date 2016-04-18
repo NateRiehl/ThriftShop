@@ -13,10 +13,10 @@ if($buyerEmail != NULL){
 }
 
 if($result == false){
-	echo("messed up");
+	echo("Any error occurred while processing your purchase");
 }
-
-echo("You bought item!");
-echo("<a href='shoppingPage.php'> Go to shopping page </a>");
+else{
+	header('Location: http://www.cs.gettysburg.edu/~riehna01/cs360/webpages/shoppingPage.php');
+}
 
 ?>

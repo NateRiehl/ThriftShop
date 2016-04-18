@@ -114,7 +114,13 @@ printf("</div>");
 				<input type="checkbox" name="category[]" value="Womenswear">Womens clothing <br />
 				<input type="checkbox" name="category[]" value="Tops">Tops <br />
 				<input type="checkbox" name="category[]" value="Pants">Pants <br />
-				<input type="checkbox" name="category[]" value="Shoes">Shoes <br />
+				<input type="checkbox" name="category[]" value="Shorts">Shorts <br />
+				<input type="checkbox" name="category[]" value="Dresses">Dresses/Skirts <br />
+				<input type="checkbox" name="category[]" value="Coats">Coats <br />
+				<input type="checkbox" name="category[]" value="Summer">Summer <br />
+				<input type="checkbox" name="category[]" value="Spring">Spring <br />
+				<input type="checkbox" name="category[]" value="Fall">Fall <br />
+				<input type="checkbox" name="category[]" value="Winter">Winterwear <br />
 				<input type="checkbox" name="category[]" value="SportsApparel">Sports Apparel <br />
 				<input type="checkbox" name="category[]" value="Other">Other <br />
 			</td>

@@ -65,7 +65,7 @@ function saveProPic($fileData) {
 /**
 * Saves an item's image to imgs/
 * Format: itemID . originalFileName
-* 	Example: "31testpants.png" 
+* 	Example: "31pants.png" 
 */
 function saveItem($fileData) {
 

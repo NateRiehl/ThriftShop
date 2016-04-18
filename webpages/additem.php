@@ -26,14 +26,22 @@ include_once('dbproj_connect.php');
  		<td><input type='text' name='name' id='name' placeholder='Title of item'/> </td>
 	</tr>
 	<tr>
-		<td><input type='number' name='price' id='price' placeholder='Price'/> </td>
+		<td><input type='number' step="any" name='price' id='price' placeholder='Price'/> </td>
 	</tr>
+	<tr><td>Select all that apply:</td></tr>
 	<tr>
 		<td>
 		<input type="checkbox" name="category[]" value="Menswear">Menswear<br />
 		<input type="checkbox" name="category[]" value="Womenswear">Womens Clothing<br />
 		<input type="checkbox" name="category[]" value="Tops">Tops <br />
 		<input type="checkbox" name="category[]" value="Pants">Pants <br />
+		<input type="checkbox" name="category[]" value="Shorts">Shorts <br />
+		<input type="checkbox" name="category[]" value="Dresses">Dresses/Skirts <br />
+		<input type="checkbox" name="category[]" value="Coats">Coats <br />
+		<input type="checkbox" name="category[]" value="Summer">Summer <br />
+		<input type="checkbox" name="category[]" value="Spring">Spring <br />
+		<input type="checkbox" name="category[]" value="Fall">Fall <br />
+		<input type="checkbox" name="category[]" value="Winter">Winterwear <br />
 		<input type="checkbox" name="category[]" value="Shoes">Shoes <br />
 		<input type="checkbox" name="category[]" value="SportsApparel">Sports Apparel<br />
 		<input type="checkbox" name="category[]" value="Other">Other
@@ -43,7 +51,7 @@ include_once('dbproj_connect.php');
 		<td> <input type='text' name ='description' id='description'  placeholder='Enter a description'/> </td>
 	</tr>
 	<tr>
-		<td> <input type='file' name='imageFile' id='imageFile' /> </td>
+		<td> <input type='file' name='imageFile' id='imageFile'/> </td>
 	</tr>
 	</table>
 	<input type='submit' value='Submit Item!'>

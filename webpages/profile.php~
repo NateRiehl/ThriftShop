@@ -32,7 +32,6 @@
 	<HEAD> 
 		<TITLE> Profile Page</TITLE>	
 		<link rel="stylesheet" type="text/css" href="../css/profileStyle.css">
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<script> //When user clicks to edit their bio, text box will show up
 			function showForm(){
 				document.getElementById("bioForm").style.display="block";
@@ -99,10 +98,10 @@
 			echo("<button type='submit'  onclick='showForm()' id='editbio'> Edit Bio </button>");	
 		}
 		else{
-			printf("<h2> About %s: </h2>", $row['Fname']);			
+			printf("<h2> About %s: </h2> <hr>", $row['Fname']);			
 		}
 		echo("<DIV class='bioInfo' id='bioInfo' align='left'>");
-		printf("<p> %s </p>", $bio);
+		printf("<hr><p> %s </p>", $bio);
 		echo("</DIV>");		
 	?> 
 	</DIV><!--End of bio section-->	
@@ -127,6 +126,7 @@
 			$numGrade= $row['numGrade'];
 			$item= $row['item'];
 			$comment= $row['comment'];
+			echo("<hr>");
 			printf("<h2>%s</h2>", $title);
 			$count = 0;
 			while($count < $numGrade){ //Print stars
@@ -143,10 +143,10 @@
 	<DIV class='selling'>
 		<?php
 			if($userspage){
-				echo("<h1>My Current Items in Marketplace:</h1>");
+				echo("<h1>My Unsold Items in Marketplace:</h1>");
 			}
 			else{
-				echo("<h1>Current Items in Marketplace:</h1>");
+				echo("<h1>Unsold Items in Marketplace:</h1>");
 			}
 			//Get user's items in marketplace
 			$query = "select i.imageLink, name, price, id, sold from ITEM AS i JOIN USER AS u ON email=sellerEmail WHERE email='$email'";

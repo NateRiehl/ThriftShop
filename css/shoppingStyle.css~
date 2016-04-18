@@ -41,7 +41,7 @@ li a:hover {
     position:absolute;
     top: 10%; right:1%;  bottom: 0;
     width: 17%;
-    height: 60%;
+    height: 85%;
     background-color: orange;
     overflow: auto;
     border-radius: 25px;
@@ -101,8 +101,7 @@ li a:hover {
 .main .item button:hover{
 	 color:#005696;
 	 text-decoration: underline;
-	 border: solid;
-	 border-color: orange;	
+	 	
 }
 .main .item .itemimg{
 	position: relative; 
@@ -138,9 +137,10 @@ input[type=submit] {
     box-sizing: border-box;
 }
 
-input[type=submit] : hover{
+input[type=submit]:hover{
     color: orange;
 }
+
 
 
 

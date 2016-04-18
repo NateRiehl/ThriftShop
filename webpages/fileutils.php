@@ -69,11 +69,6 @@ function saveProPic($fileData) {
 */
 function saveItem($fileData) {
 
-    // DEBUG: print each file data
-    echo "<PRE>\n";
-    print_r($fileData);
-    echo "</PRE>\n";
-
     // return an error or success message
     $msg = "";
 

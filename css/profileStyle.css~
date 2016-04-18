@@ -173,7 +173,11 @@ li a:hover {
     left: 7%;
     width: 100%;
     text-align: left;
+    
 
+}
+.bio hr{
+    border-color: black;
 }
 .bio h1{
 	float: left;
@@ -181,7 +185,9 @@ li a:hover {
 .bioInfo{
 	position: absolute;
 }
-
+.bioInfo hr{
+	border-color: black;
+}
 .bio form{
 	display: none;	
 }
@@ -229,9 +235,11 @@ input[type=submit]:hover {
 
 .reviews{
     position: absolute;
-    top: 28%;
+    top: 40%;
     left: 7%;
-    width: 100%;
+    width: 80%;
+    border: solid;
+    background-color: #ffc266;
 }
 
 .reviews button{
@@ -243,11 +251,11 @@ input[type=submit]:hover {
 	margin-bottom: 1%;
 }
 .review{
-	border: solid;
-	border-color: #005696;
-	width: 60%;
+	margin-left:1%;
+	width: 96%;
 	font-size: 12px;
 	margin-bottom: 1%;
+	
 }
 .review h2{
 	float: left;
@@ -259,18 +267,23 @@ input[type=submit]:hover {
 	margin-left: 25%;
 	margin-top: 0%;
 }
-
+.review hr{
+	border-color: black;
+}
 .selling{
 	position: absolute;
 	top: 45%;
 	left: 60%;
-	width: 40%;
+	width: 35%;
+	background-color: #ffc266;
+	border: solid;
 }
 .item{
 	position: relative;	
 	border: solid;
-	width: 80%;
+	width: 96%;
 	padding: 5% 0 5% 0;
+	margin-left: 1%;
 	margin-bottom: 1%;
 }
 .item button{

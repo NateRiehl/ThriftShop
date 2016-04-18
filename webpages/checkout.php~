@@ -12,21 +12,26 @@
 ?>
 
 
-<!--Copy over editItem.php and adjust to fit checkout specifications -->
 <HTML>
 	<HEAD>
 		<TITLE>Purchase <?php echo($itemName);?></TITLE>
 		<link rel="stylesheet" type="text/css" href="../css/checkoutStyle.css">
 	</HEAD>
 	<BODY>
+	<div class = "linkpanel">
+		<ul>
+			<li><a href="shoppingPage.php">Shopping Page</a></li>
+ 		 	<li><a href="profile.php">My page</a></li>
+  			<li><a href="logout.php">Log out</a></li>
+		</ul>
+	</div>
 		<DIV align="center">
-		<h1>Purchase <?php echo($itemName);?></h1>
-		<h2>Price: $<?php echo($price);?></h2>
+		<h1>Purchase: <?php echo($itemName);?></h1>
+		<h1>Price: $<?php echo($price);?></h2>
 		<form name='fmCheck' method = 'POST' action = 'checkout_item.php'>
 		<table cellpadding="0" cellspacing="5">
 
-		<tr> 
- 		<td>Buyer:</td> 
+		<tr>
 		<td><input type='hidden' name='buyer' id='buyer' value='<?php echo($email);?>'> </td>
 		</tr>
 

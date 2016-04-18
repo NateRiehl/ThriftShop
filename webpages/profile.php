@@ -101,7 +101,7 @@
 			printf("<h2> About %s: </h2>", $row['Fname']);			
 		}
 		echo("<DIV class='bioInfo' id='bioInfo' align='left'>");
-		printf("<p> %s </p>", $bio);
+		printf("<hr><p> %s </p>", $bio);
 		echo("</DIV>");		
 	?> 
 	</DIV><!--End of bio section-->	
@@ -126,6 +126,7 @@
 			$numGrade= $row['numGrade'];
 			$item= $row['item'];
 			$comment= $row['comment'];
+			echo("<hr>");
 			printf("<h2>%s</h2>", $title);
 			$count = 0;
 			while($count < $numGrade){ //Print stars
@@ -142,10 +143,10 @@
 	<DIV class='selling'>
 		<?php
 			if($userspage){
-				echo("<h1>My Current Items in Marketplace:</h1>");
+				echo("<h1>My Unsold Items in Marketplace:</h1>");
 			}
 			else{
-				echo("<h1>Current Items in Marketplace:</h1>");
+				echo("<h1>Unsold Items in Marketplace:</h1>");
 			}
 			//Get user's items in marketplace
 			$query = "select i.imageLink, name, price, id, sold from ITEM AS i JOIN USER AS u ON email=sellerEmail WHERE email='$email'";
