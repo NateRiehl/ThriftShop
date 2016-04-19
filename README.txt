@@ -44,6 +44,7 @@ Recently Done:
 16. "Narrow your Search" ->Categories
 	a. Item's don't show up twice if in two categories.
 17. Add delete button to edit item.
+18. Fix Foreign Key Constraint on Deletion. ItemID is the parent key to other tables so it is giving me an error upon trying to delete.
 
 NOTES/STEPS of what to do NEXT
 .
@@ -54,7 +55,18 @@ NOTES/STEPS of what to do NEXT
 5. More sample data
 6. (Possible) Directory of Users w/ links to their pages.
 7. FAVORITES PAGE, add button to item page as well.
-8. Fix Foreign Key Constraint on Deletion. ItemID is the parent key to other tables so it is giving me an error upon trying to delete.
+8. Show items sold for seller
+9. Limit review title
+10. Align review and bio
+11. Add title to marketplace
+12. Keep checkboxes on marketplace checked
+13. Fill item in w/ user's full name
+14. Change "buy item" button to item's title
+
+
+
+
+
 
 
 
