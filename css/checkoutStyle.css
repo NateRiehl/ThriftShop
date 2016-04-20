@@ -42,8 +42,8 @@ h2{
 input[type=submit] {
     background-color: orange;
     border: none;
-    width: 33%;
-    height: 10%;
+    width: 10%;
+    height: 5%;
     font-size: 150%;
     cursor: pointer;
     color: white;
@@ -66,7 +66,7 @@ td{
 }
 
 form{
-	margin-top:50px;
+	margin-top:0px;
 }
 
 

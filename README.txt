@@ -24,9 +24,6 @@ Recently Done:
 6. Each shoppingpage item now goes to itempage.php and sends itemID variable. This can be used to generate custom data for each user.
 7. In depth item page (itempage.php) basics are done
 8. Figure out how to show different content for different user profile page vs their own profile page
-
-*******************SINCE LAST MEETING W/ PROFESSOR KIM:*****************
-
 9. Made it so certain pages don't display if the user is not logged in. 
 10. Set up Reviews
 	a. Reviews can be seen on profile page. Stars corresponding with numgrade
@@ -43,25 +40,29 @@ Recently Done:
 15. Setup the logout feature (destroy session variables, etc.)
 16. "Narrow your Search" ->Categories
 	a. Item's don't show up twice if in two categories.
+
+*******************SINCE LAST MEETING W/ PROFESSOR KIM:*****************
+
 17. Add delete button to edit item.
 18. Fix Foreign Key Constraint on Deletion. ItemID is the parent key to other tables so it is giving me an error upon trying to delete.
+19. Fixed title for Shopping page to include categories/sort
+20. Keep checkboxes on marketplace checked
+21. Change "buy item" button to item's title
+22. Format "currently selling" on profile.php
+23. Added Not Sold to search
+24. FAVORITES PAGE, add button to item page as well.
 
 NOTES/STEPS of what to do NEXT
-.
-1. Decide if items should be able to have multiple images
-2. Format "currently selling" on profile.php
-3. More CSS todo
-4. Documentation
-5. More sample data
-6. (Possible) Directory of Users w/ links to their pages.
-7. FAVORITES PAGE, add button to item page as well.
-8. Show items sold for seller
-9. Limit review title
-10. Align review and bio
-11. Add title to marketplace
-12. Keep checkboxes on marketplace checked
-13. Fill item in w/ user's full name
-14. Change "buy item" button to item's title
+
+2. More CSS todo
+3. Documentation
+4. More sample data
+5. (Possible) Directory of Users w/ links to their pages.
+6. Show items sold for seller
+7. Limit review title
+8. Fix border for review and bio
+
+
 
 
 

@@ -7,6 +7,7 @@ $itemID = $_POST['itemID'];
 if($isDelete == 'yes'){
 	echo($itemID."ID");
 	$query = "DELETE FROM CATEGORY WHERE itemID='$itemID'";
+	$result = $db->query($query);
 	$query = "DELETE FROM ITEM WHERE id='$itemID'";
 	$result = $db->query($query);
 	if($result != false){
@@ -50,7 +51,6 @@ if(!empty($buyerEmail)){
 	$result = $db->query($query);
 }
 }
+header('Location: http://www.cs.gettysburg.edu/~maldke01/DBProject/webpages/shoppingPage.php');
 ?>
 
-Item Updated
-<a href="shoppingPage.php"> Go to shopping page </a>

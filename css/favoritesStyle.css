@@ -1,4 +1,4 @@
-/*Style sheet for shopping page */
+/*Style sheet for favorites page */
 
 .fullscreen{
     position:absolute;
@@ -36,15 +36,6 @@ li a {
 }
 li a:hover {
 	color: orange;
-}
-.right {
-    position:absolute;
-    top: 20%; right:1%;  bottom: 0;
-    width: 17%;
-    height: 85%;
-    background-color: orange;
-    overflow: auto;
-    border-radius: 25px;
 }
 
 .main {
@@ -120,30 +111,3 @@ li a:hover {
 	width: 60%;
 	height: 60%;
 }
-@media (max-width: 30em){
-  .tile{
-     width: 50%;
-     padding-bottom: 50%;
-  }
-}
-input[type=submit] {
-    position: absolute;
-    left: 25%;
-    background-color: #005696;
-    margin-top: 10%;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-
-input[type=submit]:hover{
-    color: orange;
-}
-
-
-
-

@@ -49,6 +49,7 @@
 	<DIV class = "linkpanel">
 		<ul>
   			<li><a href="shoppingPage.php">Shopping Page</a></li>
+			<li><a href="myfavorites.php">My Favorites</a></li>
   			<li><a href="logout.php">Log Out</a></li>
 
 		</ul>
@@ -120,23 +121,26 @@
 			printf("<form method='post' action='addreview.php' id='addreview'><input type='hidden' name='email' value=%s> </form>", $email);
 			echo("<button type='submit'  form='addreview'> Add Review </button>");
 		}
+		
+		echo("<table>");
+		echo("<col width='350'>");
 		while($row = $result->fetch()){ //Get each review of this user
 			printf("<DIV class=review>");
 			$title = $row['title'];
 			$numGrade= $row['numGrade'];
 			$item= $row['item'];
 			$comment= $row['comment'];
-			echo("<hr>");
-			printf("<h2>%s</h2>", $title);
+			printf("<tr><td><h2>%s</h2></td><td>", $title);
 			$count = 0;
 			while($count < $numGrade){ //Print stars
-				printf("<img src='imgs/star.png' style='width:20px;height: 18px;position:relative; top: 5%%; float: left;'>");
+				printf("<img src='imgs/star.png' style='width:20px;height: 18px;position:relative; margin-bottom: 10%%; float: left;'>\n");
 				$count++;	
 			}
-			printf("<p>Item bought: %s</p>", $item);
-			printf(" %s ", $comment);
+			printf("</td><td><p>Item bought: %s</p></td></tr>", $item);
+			printf("<tr><td>%s</td></tr>", $comment);
 			echo("</DIV>");
 		}
+		echo("</table>");
 	?>
 	</DIV> <!--End of review section-->
 </DIV> <!--End of 'bioreview' AKA left side of bottom half of page-->
@@ -171,6 +175,9 @@
 				if($count == 0){
 					echo("No unsold items to display");				
 				}
+			}
+			if($userspage == true){
+				echo("<a href='soldItems.php'>Items Already Sold</a>");
 			}
 		?>
 	</DIV> <!--End of 'currently selling'-->

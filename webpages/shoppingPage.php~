@@ -16,13 +16,17 @@
 <div class="fullscreen">
 	<div class = "top">
 		<ul>
- 		 <li><a href="profile.php">My page</a></li>
+ 		 <li><a href="profile.php">My Page</a></li>
+		<li><a href="myfavorites.php">My Favorites</a></li>
   		<li><a href="logout.php">Log out</a></li>
 		</ul>
 	</div>
 <?php
+
 printf("<div class = 'main'>");
+
 if(empty($_POST['submitCategory'])){ //User is looking at all items
+	echo("<h1>Shopping Page</h1>\n");
 	$query = "SELECT * FROM ITEM;";
 	$result = $db->query($query);
 	while ($row = $result->fetch()) { // for each row in the result table
@@ -32,48 +36,80 @@ if(empty($_POST['submitCategory'])){ //User is looking at all items
 		$price=$row['price'];
 		$imageLink=$row['imageLink'];
 		$sold = $row['sold'];
-		printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>", $id, $id);
+		printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>\n", $id, $id);
 		printf("<button type='submit' form='%s'><img src='$imageLink' class='itemimg'> </br>%s $%.2f</button> &nbsp;",$id, $name, $price);
 		echo("<div class='sold'>");
 		if($sold == 1){
-			echo("<img src='imgs/sold.gif'>");
+			//echo("<img src='imgs/sold.gif'>"); Now Sold is the same overlay button.
+			printf("<button type='submit' form='%s'><img src='imgs/sold.gif' class='itemimg'> </br>%s $%.2f</button> &nbsp;",$id, $name, $price);
 		}
 		echo("</div>");
-		echo("</div>");
+		echo("</div>\n");
 		}
 }
 else{ //User has selected categories to narrow search
 	$itemCount = 0; //Keep track of number of items printed to screen
 	$counter = 0;
 	$categories="";
+	$pageHeader=": ";
 	if(isset($_POST['category'])){
+	
 	foreach($_POST['category'] as $category){
 		if($category == 'all'){
 			$categories="";
+			$pageHeader = $pageHeader .'"'."All".'"';
 			break;
 		}
 		else if($counter==0){
 			$categories="where id IN (select id from ITEM JOIN CATEGORY ON itemID=id where category='".$category."'".")";
+			$pageHeader = $pageHeader .'"'.$category.'"';
 		}
 		else{
 			$categories=$categories." AND id IN (select id from ITEM JOIN CATEGORY ON itemID=id where category="."'$category'" . ")";		
+			$pageHeader = $pageHeader.', "'.$category.'"';		
 		}
-		
 		$counter++;		
 		}
+	}
+	if(isset($_POST['notSold'])){
+		if($counter != 0){
+			$categories = $categories . " AND sold=0";	
+		}
+		else{
+			$categories="WHERE sold=0";	
+		}
+	}
+	if($pageHeader != ": "){
+		printf("<h1>Shopping Page%s </h1>\n", $pageHeader);
+	}
+	else{
+		printf("<h1>Shopping Page </h1>\n");
 	}	
 	$orderBy="";
 	if(isset($_POST['sort'])){
 		$count = 0;
+		$sortHeader = "";
 		foreach($_POST['sort'] as $sortby){
 			if($count == 0){
-				$orderBy = "ORDER BY ".$sortby;			
+				$orderBy = "ORDER BY ".$sortby;		
 			}
 			else{
 				$orderBy = $orderBy .", ". $sortby;
+				
 			}
+				if($sortby == 'price'){
+					$sortHeader = $sortHeader . ", Price(Low)";			
+				}
+				else if($sortby == 'price DESC'){
+					$sortHeader = $sortHeader . ", Price(High)";			
+				}
+				else{
+					$sortHeader = $sortHeader . ", Date Posted(New)";			
+				}
 			$count++;
 		}
+		$sortHeader = substr($sortHeader, 2);
+		printf("<h2>Sorted By: %s </h2>", $sortHeader);
 	}
 		$query = "select * from ITEM $categories $orderBy"; 
 		//Join category and item table based off of submitted form
@@ -87,7 +123,7 @@ else{ //User has selected categories to narrow search
 			$imageLink=$row['imageLink'];
 			$sold = $row['sold'];
 			printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>", $id, $id);
-			printf("<button type='submit' form='%s'><img src='$imageLink' class='itemimg'> </br>%s %s</button> &nbsp;",$id, $name, "$".$price);
+			printf("<button type='submit' form='%s'><img src='$imageLink' class='itemimg'> </br>%s $%.2f</button> &nbsp;",$id, $name, $price);
 			echo("<div class='sold'>");
 			if($sold == 1){
 			echo("<img src='imgs/sold.gif'>");
@@ -109,29 +145,30 @@ printf("</div>");
 		<caption><h3>Show Items In: </h3></caption>
 		<tr>
 			<td>
-				<input type="checkbox" name="category[]" value="all">All <br />
-				<input type="checkbox" name="category[]" value="Menswear">Menswear <br />
-				<input type="checkbox" name="category[]" value="Womenswear">Womens clothing <br />
-				<input type="checkbox" name="category[]" value="Tops">Tops <br />
-				<input type="checkbox" name="category[]" value="Pants">Pants <br />
-				<input type="checkbox" name="category[]" value="Shorts">Shorts <br />
-				<input type="checkbox" name="category[]" value="Dresses">Dresses/Skirts <br />
-				<input type="checkbox" name="category[]" value="Coats">Coats <br />
-				<input type="checkbox" name="category[]" value="Summer">Summer <br />
-				<input type="checkbox" name="category[]" value="Spring">Spring <br />
-				<input type="checkbox" name="category[]" value="Fall">Fall <br />
-				<input type="checkbox" name="category[]" value="Winter">Winterwear <br />
-				<input type="checkbox" name="category[]" value="SportsApparel">Sports Apparel <br />
-				<input type="checkbox" name="category[]" value="Other">Other <br />
+				<input type="checkbox" name="category[]" value="all"<?php if(isset($_POST['category']) && in_array('all',$_POST['category'])) echo "checked='checked'"; ?> >All <br />
+				<input type="checkbox" name="category[]" value="Menswear"<?php if(isset($_POST['category']) && in_array('Menswear',$_POST['category'])) echo "checked='checked'"; ?>>Menswear <br />
+				<input type="checkbox" name="category[]" value="Womenswear"<?php if(isset($_POST['category']) && in_array('Womenswear',$_POST['category'])) echo "checked='checked'"; ?>>Womens clothing <br />
+				<input type="checkbox" name="category[]" value="Tops"<?php if(isset($_POST['category']) && in_array('Tops',$_POST['category'])) echo "checked='checked'"; ?>>Tops <br />
+				<input type="checkbox" name="category[]" value="Pants"<?php if(isset($_POST['category']) && in_array('Pants',$_POST['category'])) echo "checked='checked'"; ?>>Pants <br />
+				<input type="checkbox" name="category[]" value="Shorts"<?php if(isset($_POST['category']) && in_array('Shorts',$_POST['category'])) echo "checked='checked'"; ?>>Shorts <br />
+				<input type="checkbox" name="category[]" value="Dresses"<?php if(isset($_POST['category']) && in_array('Dresses',$_POST['category'])) echo "checked='checked'"; ?>>Dresses/Skirts <br />
+				<input type="checkbox" name="category[]" value="Coats"<?php if(isset($_POST['category']) && in_array('Coats',$_POST['category'])) echo "checked='checked'"; ?>>Coats <br />
+				<input type="checkbox" name="category[]" value="Summer"<?php if(isset($_POST['category']) && in_array('Summer',$_POST['category'])) echo "checked='checked'"; ?>>Summer <br />
+				<input type="checkbox" name="category[]" value="Spring"<?php if(isset($_POST['category']) && in_array('Spring',$_POST['category'])) echo "checked='checked'"; ?>>Spring <br />
+				<input type="checkbox" name="category[]" value="Fall"<?php if(isset($_POST['category']) && in_array('Fall',$_POST['category'])) echo "checked='checked'"; ?>>Fall <br />
+				<input type="checkbox" name="category[]" value="Winter"<?php if(isset($_POST['category']) && in_array('Winter',$_POST['category'])) echo "checked='checked'"; ?>>Winter <br />
+				<input type="checkbox" name="category[]" value="SportsApparel"<?php if(isset($_POST['category']) && in_array('SportsApparel',$_POST['category'])) echo "checked='checked'"; ?>>Sports Apparel <br />
+				<input type="checkbox" name="category[]" value="Other"<?php if(isset($_POST['category']) && in_array('Other',$_POST['category'])) echo "checked='checked'"; ?>>Other <br />
+				<input type="checkbox" name="notSold[]" value="notSold"<?php if(isset($_POST['notSold']) && in_array('notSold',$_POST['notSold'])) echo "checked='checked'"; ?>>Not Sold <br />
 			</td>
 		</tr>
 		
 		<tr><td><h3 align="center" style="margin-top:10%; margin-bottom:5%;">Sort By: </h3></td></tr>
 		<tr>
 			<td>
-				<input type="checkbox" name="sort[]" value="price">Price (Low) <br />
-				<input type="checkbox" name="sort[]" value="price DESC">Price (High) <br />
-				<input type="checkbox" name="sort[]" value="date">Date Posted(New) <br />
+				<input type="checkbox" name="sort[]" value="price"<?php if(isset($_POST['sort']) && in_array('price',$_POST['sort'])) echo "checked='checked'"; ?>>Price (Low) <br />
+				<input type="checkbox" name="sort[]" value="price DESC"<?php if(isset($_POST['sort']) && in_array('price DESC',$_POST['sort'])) echo "checked='checked'"; ?>>Price (High) <br />
+				<input type="checkbox" name="sort[]" value="date"<?php if(isset($_POST['sort']) && in_array('date',$_POST['sort'])) echo "checked='checked'"; ?>>Date Posted(New) <br />
 			</td>
 		</tr>
 

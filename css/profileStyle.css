@@ -171,7 +171,7 @@ li a:hover {
     position:relative;
     top: 5%;
     left: 7%;
-    width: 100%;
+    width: 80%;
     text-align: left;
     
 
@@ -256,17 +256,19 @@ input[type=submit]:hover {
 	
 }
 .review h2{
-	float: left;
 	margin-top: 0;
 	margin-right: 1%;
 }
 .review p{
 	font-size: 150%;
 	margin-left: 25%;
-	margin-top: 0%;
 }
 .review hr{
 	border-color: black;
+}
+
+.review tr{
+	border-bottom:1pt solid black;
 }
 .selling{
 	position: absolute;

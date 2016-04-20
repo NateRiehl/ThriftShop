@@ -52,27 +52,56 @@ li a:hover {
 	height: 100%;
 }
 .description{
-	position: absolute;
-	top: 0;
+	position: relative;
+	top: -50%;
 	left: 35%;
-	width: 50%;
+	width: 20%;
+	height: 50%;
 }
 .emailContainer h3, .emailContainer p{
 	display:inline;
 }
-.description {
-	background-color:#005696;
-	border: none;
-	padding: 2% 5% 2% 5%;
-    	color: white;
-	margin-right: 1%;
-	margin-bottom: 1%;
-	box-sizing: border-box;
+
+.buttons{
+	position: absolute;
 }
-.description button:hover{
+.buttons button {
+	background-color:#005696;
+	box-sizing: border-box;
+	border: none;
+	padding: 2% 8% 2% 5%;
+    color: white;
+	margin-bottom: 2%;
+	margin-left: 2%;
+}
+.buttons button:hover{
 	border: solid;
 	border-color: orange;
 	cursor: pointer;
 }
+input[type=submit]{
+	background-color:#005696;
+	border: none;
+	padding: 2% 8% 2% 8%;
+    color: white;
+	margin-right: 1%;
+	margin-bottom: 1%;
+	box-sizing: border-box;
+}
+
+input[type=submit]:hover{
+	border: solid;
+	border-color: orange;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
 
 

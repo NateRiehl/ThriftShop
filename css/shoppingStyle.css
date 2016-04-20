@@ -39,7 +39,7 @@ li a:hover {
 }
 .right {
     position:absolute;
-    top: 10%; right:1%;  bottom: 0;
+    top: 19%; right:1%;  bottom: 0;
     width: 17%;
     height: 85%;
     background-color: orange;
@@ -85,6 +85,10 @@ li a:hover {
 	display: none;
 }
 
+.main h1,h2{
+	color: white;
+
+}
 .main .item button {
    	position:relative:
 	top: 0;

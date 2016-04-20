@@ -16,7 +16,8 @@ if($result == false){
 	echo("Any error occurred while processing your purchase");
 }
 else{
-	header('Location: http://www.cs.gettysburg.edu/~riehna01/cs360/webpages/shoppingPage.php');
+	//header('Location: http://www.cs.gettysburg.edu/~riehna01/cs360/webpages/shoppingPage.php');
+	header('Location: http://www.cs.gettysburg.edu/~maldke01/DBProject/webpages/shoppingPage.php');
 }
 
 ?>

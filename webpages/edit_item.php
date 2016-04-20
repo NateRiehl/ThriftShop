@@ -51,7 +51,7 @@ if(!empty($buyerEmail)){
 	$result = $db->query($query);
 }
 }
+header('Location: http://www.cs.gettysburg.edu/~maldke01/DBProject/webpages/shoppingPage.php');
+//header('Location: http://www.cs.gettysburg.edu/~riehna01/cs360/webpages/shoppingPage.php');
 ?>
 
-Item Updated
-<a href="shoppingPage.php"> Go to shopping page </a>

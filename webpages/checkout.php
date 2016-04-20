@@ -54,6 +54,11 @@
 	</table>
 	<input type='submit' value='Buy Item!'>
 	</form>
+		<form name='fmCancel' method = 'POST' action = 'itempage.php'>
+			<input type='hidden' name='itemID' value='<?php echo($itemID);?>'/>
+			<input type='submit' value='Cancel'>
+		</form>
+
 	</DIV>
 	</BODY>
 </HTML>

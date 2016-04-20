@@ -18,6 +18,7 @@ f<?php
 	<div class = "top">
 		<ul>
  		 <li><a href="shoppingPage.php">Shopping Page</a></li>
+		<li><a href="myfavorites.php">My Favorites</a></li>
 		<li><a href="profile.php">My page</a></li>
 		</ul>
 	</div>
@@ -65,22 +66,31 @@ f<?php
 		if($sold == 1 && !is_null($buyerEmail)){
 			printf("<div class='emailContainer'><h3>Buyer:</h3><p> %s </p></div>", $buyerEmail);		
 		}
-
+		echo("<DIV class='buttons'>");
 		printf("<form method='post' action='profile.php' id='email'><input type='hidden' name='sellerEmail' value=%s> </form>", $sellerEmail);
 		printf("<form method='post' action='edititem.php' id='edititem'><input type='hidden' name='itemID' value=%s> </form>", $id);
 		printf("<form method='post' action='checkout.php' id='checkout'><input type='hidden' name='itemID' value=%s> </form>", $id);
+			printf("<div class='emailContainer'><h3>Date Listed: </h3><p>%s </p></div>", $date);
 			if($sellerEmail == $userEmail){
 			printf("<button type='submit' id='btnMyPage' form='email'>Go to my page</button>");
 			printf("<button type='submit' id='btnMyItem'form='edititem'>Edit my item</button>");
 			}
 			else{
+				$query = "SELECT * FROM FAVORITES WHERE userEmail='$userEmail' && itemID='$id'";
+				$result = $db->query($query);
+				if($result->rowCount() == 0){
+			printf("<form method='post' action='favorite_add.php' id='favorite'><input type='hidden' name='itemID' value=%s> <input type='hidden' name='add_remove' value='add'><input type='hidden' name='email' value=%s> <input type='submit' name='favorited' value='Add To Favorites'></form>", $id,$userEmail);
+				}
+				else{
+				printf("<form method='post' action='favorite_add.php' id='favorite'><input type='hidden' name='itemID' value=%s> <input type='hidden' name='add_remove' value='remove'><input type='hidden' name='email' value=%s> <input type='submit' name='favorited' value='Remove From Favorites'></form>", $id,$userEmail);
+				}
 			printf("<button type='submit' form='email'>Go to Seller's page</button>");
 				//Possibly make this button styled differently??		
 				if($sold == 0){
-					printf("<button type='submit' form='checkout'>Buy Item</button>");
+					printf("<button type='submit' form='checkout'>Buy %s</button>", $name);
 				}
 			}
-			printf("<div class='emailContainer'><h3>Date Listed: </h3><p>%s </p></div>", $date);
+			echo("</Div>");
 	?>	
 	</DIV> 
 </DIV>
