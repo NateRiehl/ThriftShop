@@ -47,7 +47,7 @@
 	
 	<DIV class = "tophalf"> 
 	<DIV class = "linkpanel">
-		<ul>
+		<ul>	<?php if($userspage==false){echo("<li><a href='profile.php'>My Page</a></li>");}?>
   			<li><a href="shoppingPage.php">Shopping Page</a></li>
 			<li><a href="myfavorites.php">My Favorites</a></li>
   			<li><a href="logout.php">Log Out</a></li>
