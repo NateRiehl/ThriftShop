@@ -10,7 +10,7 @@
 	$isSold = $row['sold'];
 	$price = $row['price'];
 ?>
-
+<!--Checkout Form for purchasing item. -->
 
 <HTML>
 	<HEAD>

@@ -3,10 +3,11 @@
 	include_once('dbproj_connect.php');
 	session_start();
 	if(!isset($_SESSION['email'])){ //Make sure user is logged in..Otherwise, send them to login page
-		header('Location: http://www.cs.gettysburg.edu/~riehna01/cs360/webpages/homepage.php');
+		header('Location: homepage.php');
 	}
 	$email = $_SESSION['email'];
 ?>
+<!--Favorites page where "add to favorites" items are located. -->
 <html>
 	<head>
 		<title>My Favorites</title>
@@ -23,6 +24,7 @@
 	</div>
 <div class = 'main'>	
 	<?php
+			//Query database to pull all favorited items.
 			$query = "SELECT * from ITEM JOIN FAVORITES ON itemID=id WHERE userEmail='$email'";
 			$result = $db->query($query);
 			echo("<h1> My Favorites</h1>");
@@ -33,8 +35,8 @@
 				$price=$row['price'];
 				$imageLink=$row['imageLink'];
 				$sold = $row['sold'];
-				printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>", $id, $id);
-				printf("<button type='submit' form='%s'><img src='$imageLink' class='itemimg'> </br>%s $%.2f</button> &nbsp;",$id, $name, $price);
+				printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>\n", $id, $id);
+				printf("<button type='submit' form='%s'><img src='$imageLink' class='itemimg'> </br>%s $%.2f</button> &nbsp;\n",$id, $name, $price);
 				echo("<div class='sold'>");
 				if($sold == 1){
 					echo("<img src='imgs/sold.gif'>");

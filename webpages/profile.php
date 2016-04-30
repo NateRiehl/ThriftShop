@@ -44,7 +44,7 @@
 <BODY>
 	
 <DIV class = "bod">
-	
+	<!--Links to other pages.-->
 	<DIV class = "tophalf"> 
 	<DIV class = "linkpanel">
 		<ul>	<?php if($userspage==false){echo("<li><a href='profile.php'>My Page</a></li>");}?>

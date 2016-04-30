@@ -10,6 +10,7 @@
 	$isSold = $row['sold'];
 	$buyerEmail = $row['buyerEmail'];
 ?>
+<!--Edit an item that you are currently selling. -->
 <HTML>
 	<HEAD>
 		<TITLE>Edit <?php echo($itemName);?></TITLE>
@@ -26,6 +27,7 @@
 		<DIV align="center">
 		<h1>Edit Item <?php echo($itemName);?></h1>
 		
+		<!--Filled in form with information about the item. -->
 		<form name='fmEdit' id='fmEdit' method = 'POST' action = 'edit_item.php'>
 		<table cellpadding="0" cellspacing="5">
 

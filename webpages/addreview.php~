@@ -8,6 +8,7 @@ $result = $db->query($query);
 $row = $result->fetch();
 $name = $row['Fname'];
 ?>
+<!--Add a review to a seller. -->
 <HTML>	
 	<head> 
 		<title> Add Review for <?php echo($name); ?></title>
@@ -19,7 +20,7 @@ $name = $row['Fname'];
 </div>
 
 <div align=center class = "registerForm">
-<!-- Form for adding items to store -->
+<!-- Form for adding review to seller. -->
 <form name='fmAdd' method='POST' action='add_review.php'>
 	<table cellpadding="0" cellspacing="5">
 	<tr>

@@ -59,7 +59,7 @@ input[type=text] {
     font-size: 15px;
     height: 25px;
     width: 200px;
-    margin-right: 1%;
+    margin-right: .25%;
 }
 input[type=password] {
     border: none;

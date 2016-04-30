@@ -7,6 +7,7 @@
 	}
 	$email = $_SESSION['email'];
 ?>
+<!--Items that have already been sold. This page can only be seen and linked to by the seller.-->
 <html>
 	<head>
 		<title>My Sold Items</title>
@@ -23,6 +24,7 @@
 	</div>
 <div class = 'main'>	
 	<?php
+			//Pull items with a TRUE sold attribute.
 			$query = "SELECT * from ITEM WHERE sellerEmail='$email' && sold=1";
 			$result = $db->query($query);
 			echo("<h1> My Sold Items</h1>");
@@ -33,8 +35,8 @@
 				$price=$row['price'];
 				$imageLink=$row['imageLink'];
 				$sold = $row['sold'];
-				printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>", $id, $id);
-				printf("<button type='submit' form='%s'><img src='$imageLink' class='itemimg'> </br>%s $%.2f</button> &nbsp;",$id, $name, $price);
+				printf("<form method='post' action='itempage.php' id='%s'><input type='hidden' name='itemID' value=%s> </form>\n", $id, $id);
+				printf("<button type='submit' form='%s'><img src='$imageLink' class='itemimg'> </br>%s $%.2f</button> &nbsp;\n",$id, $name, $price);
 				echo("<div class='sold'>");
 				if($sold == 1){
 					echo("<img src='imgs/sold.gif'>");

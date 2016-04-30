@@ -4,6 +4,7 @@ include_once('dbproj_connect.php');
 
 $isDelete = $_POST['isDelete'];
 $itemID = $_POST['itemID'];
+//Check if item is being deleted. If so, query a delete from database.
 if($isDelete == 'yes'){
 	echo($itemID."ID");
 	$query = "DELETE FROM CATEGORY WHERE itemID='$itemID'";
@@ -14,7 +15,7 @@ if($isDelete == 'yes'){
 		echo("\nSuccessful deletion");	
 	}
 }
-else{
+else{//If not being deleted, check other information.
 $name= $_POST['name'];
 $price=$_POST['price'];
 $description =$_POST['description'];
@@ -22,6 +23,7 @@ $sold = $_POST['sold'];
 $query;
 $buyerEmail = $_POST['buyerEmail'];
 
+//If any information is edited, update. Else, leave it how it was.
 if(!empty($name)){
 	$query = "Update ITEM set name='$name' Where id='$itemID'";
 	$result = $db->query($query);
@@ -43,6 +45,7 @@ else{
 	$query = "Update ITEM set sold=0 Where id='$itemID'";
 	$buyerEmail = NULL;
 }
+
 //Set item to be sold/notSold
 $result = $db->query($query);
 

@@ -8,6 +8,8 @@ UPDATED 3/26/16 Reviews
 UPDATED 4/02/16 Currently selling, addreview, add_review
 UPDATED 4/04/16 edititem, edit_item, checkout
 UPDATED 4/05/16 categories, item functionality, checkout functionality
+UPDATED 4/16/16 cleaned up CSS and added checkbox/favorites functionality
+UPDATED 4/30/16 final touches and documentation of project
 
 Recently Done:
 1. Created "profile.php". This is the user's personal page.
@@ -51,16 +53,11 @@ Recently Done:
 22. Format "currently selling" on profile.php
 23. Added Not Sold to search
 24. FAVORITES PAGE, add button to item page as well.
+25. Documentation
+26. Sample data added. 
+27. Show items sold only to seller.
 
-NOTES/STEPS of what to do NEXT
 
-2. More CSS todo
-3. Documentation
-4. More sample data
-5. (Possible) Directory of Users w/ links to their pages.
-6. Show items sold for seller
-7. Limit review title
-8. Fix border for review and bio
 
 
 

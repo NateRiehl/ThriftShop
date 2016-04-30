@@ -7,6 +7,7 @@ $buyerEmail = $_POST['email'];
 $query = "Update ITEM SET sold='1' Where id='$itemID'";
 $result = $db->query($query);
 
+//Check input information to varify purchase.
 if($buyerEmail != NULL){
 	$query = "Update ITEM SET buyerEmail='$buyerEmail' Where id='$itemID'";
 	$result = $db->query($query);

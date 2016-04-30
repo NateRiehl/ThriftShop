@@ -54,6 +54,7 @@ else{ //User has selected categories to narrow search
 	$pageHeader=": ";
 	if(isset($_POST['category'])){
 	
+	//Building inner query by appending appropriate category.
 	foreach($_POST['category'] as $category){
 		if($category == 'all'){
 			$categories="";
@@ -71,6 +72,7 @@ else{ //User has selected categories to narrow search
 		$counter++;		
 		}
 	}
+	//Checking if the item is sold and to query.
 	if(isset($_POST['notSold'])){
 		if($counter != 0){
 			$categories = $categories . " AND sold=0";	
@@ -86,6 +88,8 @@ else{ //User has selected categories to narrow search
 		printf("<h1>Shopping Page </h1>\n");
 	}	
 	$orderBy="";
+	
+	//Adding sorting to query.
 	if(isset($_POST['sort'])){
 		$count = 0;
 		$sortHeader = "";
@@ -145,6 +149,7 @@ printf("</div>");
 		<caption><h3>Show Items In: </h3></caption>
 		<tr>
 			<td>
+				<!-- Php tags allow boxes that were already checked to stay checked once refreshing page. -->
 				<input type="checkbox" name="category[]" value="all"<?php if(isset($_POST['category']) && in_array('all',$_POST['category'])) echo "checked='checked'"; ?> >All <br />
 				<input type="checkbox" name="category[]" value="Menswear"<?php if(isset($_POST['category']) && in_array('Menswear',$_POST['category'])) echo "checked='checked'"; ?>>Menswear <br />
 				<input type="checkbox" name="category[]" value="Womenswear"<?php if(isset($_POST['category']) && in_array('Womenswear',$_POST['category'])) echo "checked='checked'"; ?>>Womens clothing <br />

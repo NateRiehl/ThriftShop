@@ -12,6 +12,13 @@
 			
 		<h2> Join a Thriving Community of Students and Professors Searching for High Quality, Low Price Items!</h2>
 <div align=center class = "login">
+	<!-- Check if there was an incorrect username/password entry -->
+    <?php $reasons = array("password" => "Wrong Username or Password", "blank" => "You have left one or more fields blank."); if (isset($_GET["loginFailed"])) 
+echo("<p>" . $reasons[$_GET["reason"]] . "</p>"); ?>
+<br>
+
+<!-- Login Form -->
+</form>
 	<table>
 	<form form name='fmLogin' method='POST' action='login.php'>
   	<input type="text" name="email" placeholder = "Enter Email">

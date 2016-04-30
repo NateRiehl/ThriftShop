@@ -7,6 +7,7 @@
 	}
 	$email = $_SESSION['email'];
 ?>
+<!--Items that have already been sold. This page can only be seen and linked to by the seller.-->
 <html>
 	<head>
 		<title>My Sold Items</title>
@@ -23,7 +24,8 @@
 	</div>
 <div class = 'main'>	
 	<?php
-			$query = "SELECT * from ITEM WHERE userEmail='$email' && sold=1";
+			//Pull items with a TRUE sold attribute.
+			$query = "SELECT * from ITEM WHERE sellerEmail='$email' && sold=1";
 			$result = $db->query($query);
 			echo("<h1> My Sold Items</h1>");
 			while ($row = $result->fetch()) { // for each row in the result table

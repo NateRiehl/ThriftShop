@@ -1,12 +1,14 @@
 <?php
 include_once('dbproj_connect.php');
 ?>
+<!--Add Item page with form. -->
 <HTML>	
 	<head> 
 		<title> Add Item</title>
 		<link rel="stylesheet" type="text/css" href="../css/registerStyle.css">
 	</head>
 <body> 
+<!--Tabs to other pages. -->
 <div class = "linkpanel">
 	<ul>
  		 <li><a href="shoppingPage.php">Shopping Page</a></li>
@@ -19,6 +21,7 @@ include_once('dbproj_connect.php');
 </div>
 
 <div align=center class = "registerForm">
+
 <!-- Form for adding items to store -->
 <form name='fmAdd' method='POST' action='add_item.php' onsubmit="return checkForm()" enctype='multipart/form-data'>
 	<table cellpadding="0" cellspacing="5">

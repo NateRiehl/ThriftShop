@@ -60,7 +60,9 @@
 	<input type='button' value='Delete Item' onclick="deleteItem()">
 	</form>
 
+
 	<script>
+	//Checks if the user wants to actually delete item. If yes, continues on to submit form.
 		function deleteItem(){
 			var confirm = window.confirm("Are you sure you want to delete item? Press OK to confirm deletion or Cancel to continue editing item.");
 			if(confirm == true){
